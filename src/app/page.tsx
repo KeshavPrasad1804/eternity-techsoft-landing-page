@@ -1,69 +1,103 @@
-import Image from "next/image";
+'use client';
+
+import React, { useState } from 'react';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import ProductKSign from '@/components/ProductKSign';
+import ProductGeomeridian from '@/components/ProductGeomeridian';
+import Services from '@/components/Services';
+import Process from '@/components/Process';
+import TechStack from '@/components/TechStack';
+import WhyUs from '@/components/WhyUs';
+import ProjectEstimator from '@/components/ProjectEstimator';
+import ContactSection from '@/components/ContactSection';
+import Footer from '@/components/Footer';
+import { Sparkles, ShieldCheck, Globe2 } from 'lucide-react';
 
 export default function Home() {
+  const [inquiryInitialMessage, setInquiryInitialMessage] = useState<string>('');
+
+  const handleScopeSelected = (summary: string) => {
+    setInquiryInitialMessage(
+      `Hello Eternity Techsoft team,\n\nI configured the following scope on your project estimator:\n${summary}\n\nWe would like to discuss feasibility, sprint kick-off, and technical architecture with your team.`
+    );
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="relative min-h-screen bg-[#06080d] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
+      {/* Sticky Navigation Bar */}
+      <Navbar />
+
+      {/* Main Content Sections */}
+      <main>
+        {/* 1. Hero Section */}
+        <Hero />
+
+        {/* 2. Flagship Products Lab Section Divider */}
+        <section id="products" className="py-12 border-y border-slate-900 bg-slate-950/40 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                  <Sparkles className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">
+                    The Eternity Techsoft Proprietary Product Lab
+                  </h3>
+                  <p className="text-xs text-slate-400">
+                    We turn complex engineering challenges into market-defining platforms. Explore our two active builds below.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <a
+                  href="#ksign"
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs font-semibold text-cyan-300 hover:border-cyan-500/40 transition-colors"
+                >
+                  <ShieldCheck className="w-4 h-4 text-cyan-400" />
+                  <span>K-Sign (Digital Trust)</span>
+                </a>
+                <a
+                  href="#geomeridian"
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs font-semibold text-violet-300 hover:border-violet-500/40 transition-colors"
+                >
+                  <Globe2 className="w-4 h-4 text-violet-400" />
+                  <span>Geomeridian (GIS Platform)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 3. Product Showcase 01: K-Sign */}
+        <ProductKSign />
+
+        {/* 4. Product Showcase 02: Geomeridian */}
+        <ProductGeomeridian />
+
+        {/* 5. Software Services Bento Grid */}
+        <Services />
+
+        {/* 6. Engineering Methodology / Process */}
+        <Process />
+
+        {/* 7. Technology Stack & Ecosystem */}
+        <TechStack />
+
+        {/* 8. Why Eternity Techsoft (Pillars of Rigor) */}
+        <WhyUs />
+
+        {/* 9. Interactive Scope & Architecture Estimator */}
+        <ProjectEstimator onSelectScope={handleScopeSelected} />
+
+        {/* 10. Direct Engineering Contact & Intake */}
+        <ContactSection initialMessage={inquiryInitialMessage} />
       </main>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

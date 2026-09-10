@@ -1,0 +1,125 @@
+export interface Product {
+  id: string;
+  name: string;
+  tagline: string;
+  category: string;
+  status: 'In Active Development' | 'Beta' | 'Coming Soon' | 'Live';
+  badgeColor: string;
+  description: string;
+  longDescription: string;
+  features: {
+    title: string;
+    description: string;
+    icon: string;
+  }[];
+  metrics: {
+    label: string;
+    value: string;
+  }[];
+  techPills: string[];
+}
+
+export const PRODUCTS: Product[] = [
+  {
+    id: 'k-sign',
+    name: 'K-Sign',
+    tagline: 'Military-Grade Digital Signature & Cryptographic Document Workflow Suite',
+    category: 'Trust & Contract Infrastructure',
+    status: 'In Active Development',
+    badgeColor: 'cyan',
+    description:
+      'A legally binding, tamper-evident digital signature platform engineered for enterprises, legal teams, and high-velocity digital workflows.',
+    longDescription:
+      'K-Sign eliminates the friction of physical document execution while surpassing conventional e-signature security. Built on asynchronous cryptographic hashing, multi-party orchestration, and tamper-evident audit chains, K-Sign enables seamless contract execution with irrefutable legal verifiability.',
+    features: [
+      {
+        title: 'Cryptographic Integrity',
+        description: 'Every signature is bound with SHA-256 / Ed25519 hashing, guaranteeing zero-tampering detection and immutable audit logs.',
+        icon: 'ShieldCheck',
+      },
+      {
+        title: 'Multi-Signer Orchestration',
+        description: 'Sequential, parallel, and conditional signing routes with automatic reminders, escalation trees, and signer verification.',
+        icon: 'Users',
+      },
+      {
+        title: 'E-SIGN & eIDAS Compliance',
+        description: 'Engineered in strict accordance with global legal frameworks for electronic signatures, certificates, and record retention.',
+        icon: 'FileCheck2',
+      },
+      {
+        title: 'Developer APIs & Webhooks',
+        description: 'RESTful endpoints and embedded JavaScript SDKs to embed high-performance signing workflows directly inside your web or mobile apps.',
+        icon: 'Code2',
+      },
+      {
+        title: 'Biometric & Dynamic Capture',
+        description: 'High-fidelity signature canvas capturing velocity, stroke pressure, and coordinate vector data alongside typed typography styles.',
+        icon: 'PenTool',
+      },
+      {
+        title: 'Enterprise Audit Trail',
+        description: 'Comprehensive forensic certificate containing signer IP, geolocation metadata, timestamp tokens, and hardware fingerprint.',
+        icon: 'ScrollText',
+      },
+    ],
+    metrics: [
+      { label: 'Signing Latency', value: '< 2.4s' },
+      { label: 'Verification Standard', value: 'SHA-256' },
+      { label: 'Compliance Level', value: 'E-SIGN / UETA' },
+      { label: 'API Uptime Target', value: '99.99%' },
+    ],
+    techPills: ['TypeScript', 'Node.js', 'Next.js', 'Web Crypto API', 'PostgreSQL', 'Redis', 'Docker'],
+  },
+  {
+    id: 'geomeridian',
+    name: 'Geomeridian',
+    tagline: 'High-Precision Geospatial Intelligence & Real-Time Spatial Analytics Engine',
+    category: 'Spatial Computing & Location AI',
+    status: 'In Active Development',
+    badgeColor: 'violet',
+    description:
+      'A spatial data platform engineered for dynamic geofencing, real-time telemetry streaming, terrain modeling, and enterprise geospatial decision-making.',
+    longDescription:
+      'Geomeridian converts massive geospatial datasets into real-time operational insights. Whether orchestrating autonomous drone corridors, tracking supply chain fleets, calculating cadastral boundaries, or mapping environmental impact zones, Geomeridian delivers sub-meter accuracy with ultra-low vector rendering latency.',
+    features: [
+      {
+        title: 'High-Throughput Vector Tile Engine',
+        description: 'WebGL and GPU-accelerated spatial rendering capable of displaying millions of polygon coordinates at 60 FPS.',
+        icon: 'Globe2',
+      },
+      {
+        title: 'Dynamic Geofencing & Buffers',
+        description: 'Real-time entry/exit event triggers, complex polygon spatial containment, and instantaneous distance-matrix calculations.',
+        icon: 'Maximize2',
+      },
+      {
+        title: 'Telemetry & IoT Streaming',
+        description: 'Ingests live GPS, drone telemetry, and maritime/automotive sensor data with microsecond timestamp correlation.',
+        icon: 'Radio',
+      },
+      {
+        title: 'Multi-Layer Spatial Stack',
+        description: 'Seamless blending of high-resolution satellite imagery, digital elevation models (DEM), thermal heatmaps, and infrastructure layers.',
+        icon: 'Layers',
+      },
+      {
+        title: 'GIS File Standard Ingestion',
+        description: 'Zero-conversion native processing of GeoJSON, Shapefiles, KML, GeoTIFF, and PostGIS spatial queries.',
+        icon: 'Database',
+      },
+      {
+        title: 'Spatial Intelligence & Clustering',
+        description: 'DBSCAN spatial clustering, Voronoi tessellations, and topological route optimizations for modern logistics and planning.',
+        icon: 'Cpu',
+      },
+    ],
+    metrics: [
+      { label: 'Coordinate Precision', value: 'Sub-meter' },
+      { label: 'Tile Render Latency', value: '< 16ms' },
+      { label: 'Spatial Indexing', value: 'H3 / R-Tree' },
+      { label: 'Data Ingestion Speed', value: '50k pts/sec' },
+    ],
+    techPills: ['WebGPU / WebGL', 'PostGIS', 'Golang', 'Next.js', 'Mapbox GL / Deck.gl', 'Kafka', 'Python'],
+  },
+];
