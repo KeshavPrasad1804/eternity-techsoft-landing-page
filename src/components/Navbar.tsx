@@ -14,6 +14,7 @@ import {
   GitBranch,
   Scale
 } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 interface NavbarProps {
   onOpenCommandPalette?: () => void;
@@ -199,8 +200,10 @@ export default function Navbar({ onOpenCommandPalette }: NavbarProps) {
           </a>
         </nav>
 
-        {/* Right Action Items: Cmd+K and CTA Button - Equal Height & Strict Alignment */}
+        {/* Right Action Items: ThemeToggle, Cmd+K and CTA Button - Equal Height & Strict Alignment */}
         <div className="hidden md:flex items-center gap-2.5 shrink-0">
+          <ThemeToggle />
+
           {onOpenCommandPalette && (
             <button
               onClick={onOpenCommandPalette}
@@ -224,8 +227,9 @@ export default function Navbar({ onOpenCommandPalette }: NavbarProps) {
           </a>
         </div>
 
-        {/* Mobile Menu & Search Button */}
+        {/* Mobile Menu, ThemeToggle & Search Button */}
         <div className="lg:hidden flex items-center gap-2">
+          <ThemeToggle />
           {onOpenCommandPalette && (
             <button
               onClick={onOpenCommandPalette}
