@@ -5,17 +5,24 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProductKSign from '@/components/ProductKSign';
 import ProductGeomeridian from '@/components/ProductGeomeridian';
+import ProductComparison from '@/components/ProductComparison';
+import DeveloperPlayground from '@/components/DeveloperPlayground';
 import Services from '@/components/Services';
+import EngagementModels from '@/components/EngagementModels';
 import Process from '@/components/Process';
 import TechStack from '@/components/TechStack';
+import Roadmap from '@/components/Roadmap';
 import WhyUs from '@/components/WhyUs';
 import ProjectEstimator from '@/components/ProjectEstimator';
+import FAQ from '@/components/FAQ';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import CommandPalette from '@/components/CommandPalette';
 import { Sparkles, ShieldCheck, Globe2 } from 'lucide-react';
 
 export default function Home() {
   const [inquiryInitialMessage, setInquiryInitialMessage] = useState<string>('');
+  const [commandPaletteOpen, setCommandPaletteOpen] = useState<boolean>(false);
 
   const handleScopeSelected = (summary: string) => {
     setInquiryInitialMessage(
@@ -23,14 +30,26 @@ export default function Home() {
     );
   };
 
+  const handleModelSelected = (modelTitle: string) => {
+    setInquiryInitialMessage(
+      `Hello Eternity Techsoft team,\n\nI am interested in engaging under your [${modelTitle}] framework.\n\nWe have upcoming software requirements and would like to schedule an introductory architectural discussion.`
+    );
+  };
+
   return (
     <div className="relative min-h-screen bg-[#06080d] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
+      {/* Global Cmd+K Command Palette */}
+      <CommandPalette
+        isOpen={commandPaletteOpen}
+        onClose={() => setCommandPaletteOpen(false)}
+      />
+
       {/* Sticky Navigation Bar */}
-      <Navbar />
+      <Navbar onOpenCommandPalette={() => setCommandPaletteOpen(true)} />
 
       {/* Main Content Sections */}
       <main>
-        {/* 1. Hero Section */}
+        {/* 1. Hero Section with Live Telemetry Console */}
         <Hero />
 
         {/* 2. Flagship Products Lab Section Divider */}
@@ -71,28 +90,43 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 3. Product Showcase 01: K-Sign */}
+        {/* 3. Product Showcase 01: K-Sign with In-Browser Signing Simulator */}
         <ProductKSign />
 
-        {/* 4. Product Showcase 02: Geomeridian */}
+        {/* 4. Product Showcase 02: Geomeridian with Interactive Geospatial Radar */}
         <ProductGeomeridian />
 
-        {/* 5. Software Services Bento Grid */}
+        {/* 5. Competitive Battlecard Comparison (K-Sign & Geomeridian vs Legacy) */}
+        <ProductComparison />
+
+        {/* 6. Developer SDK & API Playground */}
+        <DeveloperPlayground />
+
+        {/* 7. Software Services Bento Grid */}
         <Services />
 
-        {/* 6. Engineering Methodology / Process */}
+        {/* 8. Client Engagement & Partnership Models */}
+        <EngagementModels onSelectModel={handleModelSelected} />
+
+        {/* 9. Engineering Methodology / 5-Stage Blueprint */}
         <Process />
 
-        {/* 7. Technology Stack & Ecosystem */}
+        {/* 10. Technology Stack & Ecosystem */}
         <TechStack />
 
-        {/* 8. Why Eternity Techsoft (Pillars of Rigor) */}
+        {/* 11. Transparent Product Roadmap & Sprint Changelog */}
+        <Roadmap />
+
+        {/* 12. Why Eternity Techsoft (Pillars of Rigor) */}
         <WhyUs />
 
-        {/* 9. Interactive Scope & Architecture Estimator */}
+        {/* 13. Interactive Scope & Architecture Estimator */}
         <ProjectEstimator onSelectScope={handleScopeSelected} />
 
-        {/* 10. Direct Engineering Contact & Intake */}
+        {/* 14. Frequently Asked Questions (IP, NDAs, SLA, Onboarding) */}
+        <FAQ />
+
+        {/* 15. Direct Engineering Contact & Intake Channel */}
         <ContactSection initialMessage={inquiryInitialMessage} />
       </main>
 

@@ -8,11 +8,19 @@ import {
   X, 
   ArrowRight, 
   Sparkles,
-  Layers,
-  ChevronDown
+  ChevronDown,
+  Search,
+  Command,
+  FileCode2,
+  GitBranch,
+  Scale
 } from 'lucide-react';
 
-export default function Navbar() {
+interface NavbarProps {
+  onOpenCommandPalette?: () => void;
+}
+
+export default function Navbar({ onOpenCommandPalette }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
@@ -27,9 +35,9 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#06080d]/85 backdrop-blur-xl border-b border-slate-800/80 shadow-2xl shadow-black/50 py-3.5'
+          ? 'bg-[#06080d]/90 backdrop-blur-xl border-b border-slate-800/80 shadow-2xl shadow-black/60 py-3'
           : 'bg-transparent py-5'
       }`}
     >
@@ -65,7 +73,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+        <nav className="hidden lg:flex items-center gap-1">
           {/* Products Dropdown */}
           <div 
             className="relative"
@@ -74,11 +82,11 @@ export default function Navbar() {
           >
             <button
               onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
-              className="flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-lg hover:bg-slate-800/50 transition-colors"
+              className="flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-slate-300 hover:text-white rounded-lg hover:bg-slate-800/50 transition-colors"
               aria-expanded={productsDropdownOpen}
             >
               <span>Products</span>
-              <span className="px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 rounded-full">
+              <span className="px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 rounded-full font-mono">
                 2 Lab Builds
               </span>
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${productsDropdownOpen ? 'rotate-180' : ''}`} />
@@ -124,53 +132,107 @@ export default function Navbar() {
                     </p>
                   </div>
                 </a>
+
+                <div className="mt-2 pt-2 border-t border-slate-800/80 px-2 flex justify-between text-[10px] font-mono text-slate-500">
+                  <a href="#comparison" className="hover:text-cyan-400 flex items-center gap-1">
+                    <Scale className="w-3 h-3" /> Comparison Battlecard
+                  </a>
+                  <a href="#roadmap" className="hover:text-purple-400 flex items-center gap-1">
+                    <GitBranch className="w-3 h-3" /> Changelog
+                  </a>
+                </div>
               </div>
             )}
           </div>
 
           <a
             href="#services"
-            className="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-lg hover:bg-slate-800/50 transition-colors"
+            className="px-3 py-2 text-xs font-medium text-slate-300 hover:text-white rounded-lg hover:bg-slate-800/50 transition-colors"
           >
             Services
           </a>
 
           <a
-            href="#process"
-            className="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-lg hover:bg-slate-800/50 transition-colors"
+            href="#comparison"
+            className="px-3 py-2 text-xs font-medium text-slate-300 hover:text-white rounded-lg hover:bg-slate-800/50 transition-colors"
           >
-            Methodology
+            Battlecards
           </a>
 
           <a
-            href="#techstack"
-            className="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-lg hover:bg-slate-800/50 transition-colors"
+            href="#developer"
+            className="px-3 py-2 text-xs font-medium text-slate-300 hover:text-white rounded-lg hover:bg-slate-800/50 transition-colors flex items-center gap-1.5"
           >
-            Tech Stack
+            <FileCode2 className="w-3.5 h-3.5 text-amber-400" />
+            <span>Developers</span>
+          </a>
+
+          <a
+            href="#models"
+            className="px-3 py-2 text-xs font-medium text-slate-300 hover:text-white rounded-lg hover:bg-slate-800/50 transition-colors"
+          >
+            Pricing & Sprints
+          </a>
+
+          <a
+            href="#roadmap"
+            className="px-3 py-2 text-xs font-medium text-slate-300 hover:text-white rounded-lg hover:bg-slate-800/50 transition-colors"
+          >
+            Roadmap
           </a>
 
           <a
             href="#estimator"
-            className="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-lg hover:bg-slate-800/50 transition-colors flex items-center gap-1.5"
+            className="px-3 py-2 text-xs font-medium text-slate-300 hover:text-white rounded-lg hover:bg-slate-800/50 transition-colors flex items-center gap-1.5"
           >
             <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Scope Estimator</span>
+            <span>Estimator</span>
+          </a>
+
+          <a
+            href="#faq"
+            className="px-3 py-2 text-xs font-medium text-slate-300 hover:text-white rounded-lg hover:bg-slate-800/50 transition-colors"
+          >
+            FAQ
           </a>
         </nav>
 
-        {/* Right Action Button */}
+        {/* Right Action Items: Cmd+K and CTA Button */}
         <div className="hidden md:flex items-center gap-3">
+          {onOpenCommandPalette && (
+            <button
+              onClick={onOpenCommandPalette}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 transition-all text-xs font-mono"
+              title="Search & Quick Actions"
+            >
+              <Search className="w-3.5 h-3.5 text-cyan-400" />
+              <span className="hidden xl:inline text-[11px]">Quick Jump</span>
+              <kbd className="px-1.5 py-0.5 rounded bg-slate-950 border border-slate-800 text-[10px] text-slate-500">
+                ⌘K
+              </kbd>
+            </button>
+          )}
+
           <a
             href="#contact"
-            className="relative inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-cyan-300 hover:from-cyan-300 hover:to-cyan-200 rounded-xl shadow-lg shadow-cyan-500/20 hover:shadow-cyan-400/30 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+            className="relative inline-flex items-center justify-center gap-2 px-4.5 py-2.5 text-xs font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-cyan-300 hover:from-cyan-300 hover:to-cyan-200 rounded-xl shadow-lg shadow-cyan-500/20 hover:shadow-cyan-400/30 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
           >
             <span>Start a Project</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
+        {/* Mobile Menu & Search Button */}
+        <div className="md:hidden flex items-center gap-2">
+          {onOpenCommandPalette && (
+            <button
+              onClick={onOpenCommandPalette}
+              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white"
+              aria-label="Open command search"
+            >
+              <Search className="w-5 h-5 text-cyan-400" />
+            </button>
+          )}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white focus:outline-none"
@@ -183,7 +245,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0a0e19] border-b border-slate-800 px-6 py-6 space-y-4 animate-in slide-in-from-top-4">
+        <div className="md:hidden bg-[#0a0e19] border-b border-slate-800 px-6 py-6 space-y-4 animate-in slide-in-from-top-4 max-h-[85vh] overflow-y-auto">
           <div className="space-y-1">
             <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 px-3 py-1">
               Proprietary Products
@@ -214,28 +276,42 @@ export default function Navbar() {
 
           <div className="space-y-1 pt-2">
             <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 px-3 py-1">
-              Engineering Services
+              Platform & Services
             </div>
+            <a
+              href="#comparison"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block p-3 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-900"
+            >
+              Product Comparison Battlecards
+            </a>
+            <a
+              href="#developer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block p-3 rounded-xl text-sm font-medium text-amber-400 hover:bg-slate-900"
+            >
+              Developer SDK & APIs
+            </a>
             <a
               href="#services"
               onClick={() => setMobileMenuOpen(false)}
               className="block p-3 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-900"
             >
-              All Services & Solutions
+              Engineering Services Matrix
             </a>
             <a
-              href="#process"
+              href="#models"
               onClick={() => setMobileMenuOpen(false)}
               className="block p-3 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-900"
             >
-              Engineering Methodology
+              Partnership & Pricing Models
             </a>
             <a
-              href="#techstack"
+              href="#roadmap"
               onClick={() => setMobileMenuOpen(false)}
-              className="block p-3 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-900"
+              className="block p-3 rounded-xl text-sm font-medium text-purple-400 hover:bg-slate-900"
             >
-              Technology Stack
+              Product Roadmap & Changelog
             </a>
             <a
               href="#estimator"
@@ -243,6 +319,13 @@ export default function Navbar() {
               className="block p-3 rounded-xl text-sm font-medium text-cyan-400 hover:bg-slate-900"
             >
               Project Scope Estimator
+            </a>
+            <a
+              href="#faq"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block p-3 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-900"
+            >
+              Frequently Asked Questions
             </a>
           </div>
 
