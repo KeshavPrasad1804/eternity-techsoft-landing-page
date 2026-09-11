@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import JsonLd from "@/components/JsonLd";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,6 +20,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://eternitytechsoft.com"),
   title: "Eternity Techsoft | High-Impact Software Services & Flagship Products",
   description:
     "Eternity Techsoft is a premier software engineering services and product development company. Creators of K-Sign (Digital Trust & E-Sign Suite) and Geomeridian (Geospatial Intelligence Platform).",
@@ -36,6 +38,9 @@ export const metadata: Metadata = {
     "AI automation",
   ],
   authors: [{ name: "Eternity Techsoft Engineering Team" }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Eternity Techsoft | Software Services & Flagship Products",
     description:
@@ -47,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eternity Techsoft | Software Services & Products",
+    title: "Eternity Techsoft | Software Services & Flagship Products",
     description:
       "Enterprise software engineering services & creators of K-Sign and Geomeridian.",
   },
@@ -65,6 +70,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} scroll-smooth dark`}
     >
       <head>
+        <JsonLd />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -90,3 +96,4 @@ export default function RootLayout({
     </html>
   );
 }
+

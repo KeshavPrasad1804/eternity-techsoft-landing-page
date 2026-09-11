@@ -11,9 +11,10 @@ import {
   CheckCircle2, 
   Layers, 
   Activity,
-  Code2
+  Code2,
+  Calendar
 } from 'lucide-react';
-import { STATS } from '@/data/company';
+import { STATS, COMPANY_INFO } from '@/data/company';
 
 export default function Hero() {
   const [activeConsoleTab, setActiveConsoleTab] = useState<'overview' | 'ksign' | 'geomeridian'>('overview');
@@ -69,20 +70,28 @@ export default function Hero() {
             </p>
 
             {/* CTA Group */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5 pt-2">
               <a
                 href="#products"
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-cyan-300 to-teal-300 hover:from-cyan-300 hover:to-teal-200 shadow-xl shadow-cyan-500/25 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-cyan-300 to-teal-300 hover:from-cyan-300 hover:to-teal-200 shadow-xl shadow-cyan-500/25 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] text-sm"
               >
                 <span>Explore Products (K-Sign & Geomeridian)</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
               <a
-                href="#services"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-700 hover:border-slate-500 transition-all duration-300 shadow-lg shadow-black/40"
+                href={`mailto:${COMPANY_INFO.email}?subject=Schedule%2015-Min%20Architectural%20Discovery`}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-white bg-slate-900/90 hover:bg-slate-800 border border-cyan-500/40 hover:border-cyan-400/80 transition-all duration-300 shadow-lg shadow-black/40 text-sm group"
               >
-                <span>Our Engineering Services</span>
+                <Calendar className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
+                <span>Schedule 15-Min Discovery</span>
+              </a>
+
+              <a
+                href="#services"
+                className="inline-flex items-center justify-center gap-1.5 px-4 py-3.5 rounded-xl font-medium text-slate-300 hover:text-white hover:bg-slate-900/60 transition-colors text-sm"
+              >
+                <span>Services & Sprints</span>
               </a>
             </div>
 

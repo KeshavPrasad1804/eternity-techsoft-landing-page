@@ -14,7 +14,10 @@ import {
   GitBranch, 
   HelpCircle, 
   X,
-  ArrowRight
+  ArrowRight,
+  Activity,
+  Scale,
+  Shield
 } from 'lucide-react';
 
 interface CommandPaletteProps {
@@ -72,6 +75,13 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
       target: '#developer',
     },
     {
+      id: 'case-studies',
+      title: 'Architectural Case Studies & Production Results',
+      category: 'Client Proof',
+      icon: <Activity className="w-4 h-4 text-emerald-400" />,
+      target: '#case-studies',
+    },
+    {
       id: 'services',
       title: 'Full-Cycle Engineering Services Matrix',
       category: 'Software Services',
@@ -113,6 +123,27 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
       icon: <Mail className="w-4 h-4 text-cyan-400" />,
       target: '#contact',
     },
+    {
+      id: 'privacy',
+      title: 'Enterprise Privacy Policy & Data Governance',
+      category: 'Legal & Compliance',
+      icon: <Shield className="w-4 h-4 text-cyan-400" />,
+      target: '/privacy',
+    },
+    {
+      id: 'security',
+      title: 'Security Architecture, SOC2 & Cryptographic Standards',
+      category: 'Legal & Compliance',
+      icon: <Shield className="w-4 h-4 text-emerald-400" />,
+      target: '/security',
+    },
+    {
+      id: 'terms',
+      title: 'Terms of Engagement & 100% IP Ownership',
+      category: 'Legal & Compliance',
+      icon: <Scale className="w-4 h-4 text-violet-400" />,
+      target: '/terms',
+    },
   ];
 
   const filtered = actions.filter((item) =>
@@ -122,9 +153,13 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
 
   const handleSelect = (target: string) => {
     onClose();
-    const el = document.querySelector(target);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    if (target.startsWith('#')) {
+      const el = document.querySelector(target);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      window.location.href = target;
     }
   };
 

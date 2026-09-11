@@ -11,7 +11,8 @@ import {
   ShieldCheck, 
   Globe2, 
   MessageSquare,
-  AlertCircle
+  AlertCircle,
+  Calendar
 } from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
 
@@ -171,6 +172,24 @@ export default function ContactSection({ initialMessage = '' }: ContactSectionPr
                     ACCEPTING APPS
                   </span>
                 </div>
+              </div>
+
+              {/* 15-Minute Architectural Discovery Fast-Track */}
+              <div className="pt-4 border-t border-slate-800 space-y-3">
+                <div className="flex items-center gap-2 text-xs font-mono font-semibold text-cyan-300 uppercase tracking-wider">
+                  <Calendar className="w-4 h-4 text-cyan-400" />
+                  <span>Direct Architectural Discovery</span>
+                </div>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Prefer an introductory sync? Schedule a focused 15-minute discovery call with our principal engineering team.
+                </p>
+                <a
+                  href={`mailto:${COMPANY_INFO.email}?subject=Schedule%2015-Min%20Architectural%20Discovery`}
+                  className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-bold text-slate-950 bg-cyan-400 hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/15"
+                >
+                  <Calendar className="w-3.5 h-3.5" />
+                  <span>Schedule 15-Min Architectural Discovery</span>
+                </a>
               </div>
 
             </div>

@@ -1,0 +1,194 @@
+'use client';
+
+import React from 'react';
+import { 
+  TrendingUp, 
+  Layers, 
+  Activity, 
+  Cpu, 
+  CheckCircle2, 
+  ArrowUpRight,
+  ShieldCheck,
+  Server
+} from 'lucide-react';
+
+export default function CaseStudies() {
+  const caseStudies = [
+    {
+      badge: 'FINTECH & LEDGER INFRASTRUCTURE',
+      title: 'High-Velocity Settlement Engine with Sub-80ms P99 Latency',
+      metrics: [
+        { label: 'P99 Latency', value: '< 78ms' },
+        { label: 'Transaction Uptime', value: '99.999%' },
+        { label: 'Daily Volume', value: '$12M+' },
+      ],
+      challenge:
+        'A high-growth payments platform was struggling with database locks and race conditions during market volatility, leading to settlement bottlenecks and failed transfers.',
+      solution:
+        'Architected an event-driven CQRS ledger using Go microservices, Apache Kafka event streams, and transactional Redis caching with idempotent distributed settlement logic.',
+      stack: ['Go (Golang)', 'Kafka', 'PostgreSQL', 'Redis', 'Docker'],
+      accent: 'cyan',
+    },
+    {
+      badge: 'CLOUD MIGRATION & SRE',
+      title: 'Enterprise Kubernetes Migration & 42% Cloud Cost Reduction',
+      metrics: [
+        { label: 'Cost Reduction', value: '42%' },
+        { label: 'Deployment Downtime', value: '0 sec' },
+        { label: 'Auto-scale Speed', value: '< 45s' },
+      ],
+      challenge:
+        'A legacy B2B SaaS platform was bound to manually provisioned monolithic VMs, causing frequent downtime during traffic spikes and runaway infrastructure costs.',
+      solution:
+        'Deconstructed the monolith into containerized workloads orchestrated on Kubernetes (EKS) with Terraform Infrastructure-as-Code, spot-instance auto-scaling, and blue/green GitOps.',
+      stack: ['Kubernetes', 'Terraform', 'AWS EKS', 'ArgoCD', 'Prometheus'],
+      accent: 'emerald',
+    },
+    {
+      badge: 'SPATIAL TELEMETRY & IOT',
+      title: 'Real-Time IoT Fleet Stream Ingesting 50k+ Events Per Second',
+      metrics: [
+        { label: 'Ingestion Rate', value: '50k+ /s' },
+        { label: 'UI Frame Rate', value: '60 FPS' },
+        { label: 'Geofence SLA', value: '< 150ms' },
+      ],
+      challenge:
+        'An industrial logistics fleet required live geofence verification across 15,000 active assets, but their existing GIS stack suffered from severe query latency and UI freezing.',
+      solution:
+        'Implemented a streaming ingestion pipeline powered by ClickHouse and PostGIS with spatial H3 indexing and a WebGPU vector renderer for butter-smooth visualization.',
+      stack: ['Python', 'ClickHouse', 'PostGIS', 'WebSockets', 'WebGPU'],
+      accent: 'violet',
+    },
+  ];
+
+  return (
+    <section id="case-studies" className="py-24 relative overflow-hidden scroll-mt-20">
+      {/* Ambient background glow */}
+      <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-600/5 rounded-full blur-3xl pointer-events-none -z-10" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold uppercase tracking-wider text-cyan-400 font-mono">
+            <Activity className="w-3.5 h-3.5" />
+            Proven Engineering Impact
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
+            Architectural Case Studies & <span className="text-gradient-cyan">Production Results</span>
+          </h2>
+
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            We measure our engineering by measurable business metrics: latency drops, infrastructure savings, 
+            and resilient architectures that thrive under production stress.
+          </p>
+        </div>
+
+        {/* Case Studies Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {caseStudies.map((study, idx) => {
+            const isCyan = study.accent === 'cyan';
+            const isEmerald = study.accent === 'emerald';
+            const isViolet = study.accent === 'violet';
+
+            return (
+              <div
+                key={idx}
+                className="flex flex-col justify-between p-8 rounded-3xl bg-[#0c101b]/90 border border-slate-800 hover:border-slate-700 transition-all duration-300 group hover:shadow-2xl hover:shadow-black/60 relative overflow-hidden"
+              >
+                {/* Top Border Accent Glow */}
+                <div
+                  className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${
+                    isCyan
+                      ? 'from-cyan-500 to-blue-500'
+                      : isEmerald
+                      ? 'from-emerald-400 to-teal-500'
+                      : 'from-violet-500 to-purple-500'
+                  } opacity-80 group-hover:opacity-100 transition-opacity`}
+                />
+
+                <div className="space-y-6">
+                  {/* Category Badge */}
+                  <div className="flex items-center justify-between">
+                    <span
+                      className={`text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full border ${
+                        isCyan
+                          ? 'bg-cyan-500/10 text-cyan-300 border-cyan-500/20'
+                          : isEmerald
+                          ? 'bg-emerald-500/10 text-emerald-300 border-emerald-500/20'
+                          : 'bg-violet-500/10 text-violet-300 border-violet-500/20'
+                      }`}
+                    >
+                      {study.badge}
+                    </span>
+                    <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-white transition-colors" />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-lg font-bold text-white leading-snug group-hover:text-cyan-200 transition-colors">
+                    {study.title}
+                  </h3>
+
+                  {/* Key Metrics Banner */}
+                  <div className="grid grid-cols-3 gap-2 p-3 rounded-2xl bg-slate-900/80 border border-slate-800/80">
+                    {study.metrics.map((m, mIdx) => (
+                      <div key={mIdx} className="text-center">
+                        <div
+                          className={`text-base font-extrabold font-mono ${
+                            isCyan
+                              ? 'text-cyan-400'
+                              : isEmerald
+                              ? 'text-emerald-400'
+                              : 'text-violet-400'
+                          }`}
+                        >
+                          {m.value}
+                        </div>
+                        <div className="text-[10px] text-slate-400 font-mono mt-0.5">
+                          {m.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Challenge & Solution */}
+                  <div className="space-y-3 text-xs leading-relaxed text-slate-300">
+                    <div>
+                      <span className="font-semibold text-rose-400 font-mono text-[11px] block mb-1">
+                        THE CHALLENGE:
+                      </span>
+                      <p className="text-slate-400">{study.challenge}</p>
+                    </div>
+
+                    <div>
+                      <span className="font-semibold text-emerald-400 font-mono text-[11px] block mb-1">
+                        ARCHITECTURAL SOLUTION:
+                      </span>
+                      <p className="text-slate-300">{study.solution}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tech Stack Tags */}
+                <div className="pt-6 mt-6 border-t border-slate-800/80">
+                  <div className="flex flex-wrap gap-1.5">
+                    {study.stack.map((t, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-400"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+      </div>
+    </section>
+  );
+}

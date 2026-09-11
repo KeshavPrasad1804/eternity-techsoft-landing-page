@@ -126,9 +126,9 @@ export default function Services() {
         {/* Bottom Banner to Estimator / Contact */}
         <div className="mt-14 p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-900/90 to-cyan-950/40 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center md:text-left">
-            <h4 className="text-xl font-bold text-white">
+            <h3 className="text-xl font-bold text-white">
               Have a complex software challenge or custom product vision?
-            </h4>
+            </h3>
             <p className="text-sm text-slate-400">
               Our principal architects are ready to evaluate your requirements and assemble an agile engineering team.
             </p>

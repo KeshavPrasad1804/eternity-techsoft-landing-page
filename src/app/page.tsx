@@ -8,6 +8,7 @@ import ProductGeomeridian from '@/components/ProductGeomeridian';
 import ProductComparison from '@/components/ProductComparison';
 import DeveloperPlayground from '@/components/DeveloperPlayground';
 import Services from '@/components/Services';
+import CaseStudies from '@/components/CaseStudies';
 import EngagementModels from '@/components/EngagementModels';
 import Process from '@/components/Process';
 import TechStack from '@/components/TechStack';
@@ -61,9 +62,9 @@ export default function Home() {
                   <Sparkles className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">
+                  <h2 className="text-lg font-bold text-white">
                     The Eternity Techsoft Proprietary Product Lab
-                  </h3>
+                  </h2>
                   <p className="text-xs text-slate-400">
                     We turn complex engineering challenges into market-defining platforms. Explore our two active builds below.
                   </p>
@@ -105,7 +106,10 @@ export default function Home() {
         {/* 7. Software Services Bento Grid */}
         <Services />
 
-        {/* 8. Client Engagement & Partnership Models */}
+        {/* 8. Architectural Case Studies / Proven Production Impact */}
+        <CaseStudies />
+
+        {/* 9. Client Engagement & Partnership Models */}
         <EngagementModels onSelectModel={handleModelSelected} />
 
         {/* 9. Engineering Methodology / 5-Stage Blueprint */}
