@@ -8,11 +8,12 @@ import {
   Sparkles, 
   ShieldCheck, 
   Globe2,
+  Terminal,
   Calendar
 } from 'lucide-react';
 
 export default function Roadmap() {
-  const [selectedProduct, setSelectedProduct] = useState<'ksign' | 'geomeridian'>('ksign');
+  const [selectedProduct, setSelectedProduct] = useState<'ksign' | 'kcode' | 'geomeridian'>('ksign');
 
   const kSignMilestones = [
     {
@@ -50,6 +51,42 @@ export default function Roadmap() {
     },
   ];
 
+  const kCodeMilestones = [
+    {
+      quarter: 'M0 & M1: Foundation & Local Runner',
+      status: 'Shipped',
+      title: 'Isolated Worktrees & Baseline Evidence',
+      items: [
+        'Deterministic git worktree sandbox isolation with clean working tree guarantee',
+        'Independent baseline test reproduction gate (verifies exit 1 on clean HEAD)',
+        'Local model streaming runtime with durable token receipts',
+        'SQLite transaction state machine with SIGKILL crash recovery',
+      ],
+    },
+    {
+      quarter: 'M2: Current Sprint (Q1/Q2 2026)',
+      status: 'In Progress',
+      title: 'Multi-Backend Orchestration & Protocols',
+      items: [
+        'Local Ollama backend adapter with zero cloud data transmission',
+        'Hierarchical token reservation ledgers with child descendant budget caps',
+        'Model Context Protocol (MCP) tool integration & resource discovery',
+        'Agent Client Protocol (ACP) for mid-run interactive human steering',
+      ],
+    },
+    {
+      quarter: 'M3: Future Horizons (Q3/Q4 2026)',
+      status: 'Planned',
+      title: 'Enterprise Pilot & Multi-Repo Benchmark',
+      items: [
+        'Autonomous multi-agent coordinator with parallel inspector/writer roles',
+        'Enterprise GitHub/GitLab CI/CD pull-request verification actions',
+        'Self-hosted air-gapped container appliance with custom fine-tuned weights',
+        'SWE-bench verified reproducibility scorecard & token ROI analytics',
+      ],
+    },
+  ];
+
   const geoMilestones = [
     {
       quarter: 'Phase 1: Foundation',
@@ -58,35 +95,35 @@ export default function Roadmap() {
       items: [
         'Hardware-accelerated 60 FPS vector tile rendering engine',
         'Real-time coordinate tracking with elevation telemetry',
-        'Multi-layer rendering (Satellite, Contours, Thermal, Geofences)',
-        'Native GeoJSON polygon parser and boundary inspector',
+        'Geodesic distance calculation & point-in-polygon containment',
+        'Multi-layer GeoJSON and spatial vector streaming',
       ],
     },
     {
       quarter: 'Phase 2: Current Sprint (Q1/Q2 2026)',
       status: 'In Progress',
-      title: 'High-Throughput IoT Streaming & H3 Clustering',
+      title: 'H3 Spatial Indexing & Fleet Telemetry Ingestion',
       items: [
-        'Uber H3 hexagonal spatial indexing at resolutions 7–11',
-        'Kafka/WebSocket ingestion streaming 50,000 pts/sec',
-        'Dynamic geofencing entry/exit breach triggers',
-        'Sub-meter drone and maritime telemetry correlation',
+        'Uber H3 hexagonal grid indexing for high-density spatial clustering',
+        'High-throughput Kafka and MQTT telemetry ingestion pipeline',
+        'Automated geofence entry, dwell-time, and exit trigger engine',
+        'Python & Golang microservices spatial computation SDK',
       ],
     },
     {
       quarter: 'Phase 3: Future Horizons (Q3/Q4 2026)',
       status: 'Planned',
-      title: '3D LiDAR Terrain & Autonomous Routing',
+      title: '3D Elevation & Autonomous Spatial AI Corridors',
       items: [
-        'Digital Elevation Models (DEM) with 3D LiDAR point cloud mesh',
-        'Autonomous drone delivery corridor pathfinding',
-        'Real-time satellite thermal change detection algorithms',
-        'Offline-first mobile GIS field inspector suite',
+        '3D LiDAR terrain rendering with real-time solar shadowing',
+        'Autonomous drone delivery corridor route optimization',
+        'Predictive supply chain dwell-time AI models',
+        'Offline-capable spatial mapping edge appliance',
       ],
     },
   ];
 
-  const milestones = selectedProduct === 'ksign' ? kSignMilestones : geoMilestones;
+  const milestones = selectedProduct === 'ksign' ? kSignMilestones : selectedProduct === 'kcode' ? kCodeMilestones : geoMilestones;
 
   return (
     <section id="roadmap" className="py-24 relative overflow-hidden scroll-mt-20">
@@ -113,10 +150,10 @@ export default function Roadmap() {
 
           {/* Product Toggle */}
           <div className="flex justify-center pt-4">
-            <div className="inline-flex p-1.5 rounded-2xl bg-slate-900/90 border border-slate-800">
+            <div className="inline-flex flex-wrap justify-center p-1.5 rounded-2xl bg-slate-900/90 border border-slate-800 gap-1">
               <button
                 onClick={() => setSelectedProduct('ksign')}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                   selectedProduct === 'ksign'
                     ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20'
                     : 'text-slate-400 hover:text-white'
@@ -126,8 +163,19 @@ export default function Roadmap() {
                 <span>K-Sign Roadmap</span>
               </button>
               <button
+                onClick={() => setSelectedProduct('kcode')}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                  selectedProduct === 'kcode'
+                    ? 'bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/20'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                <Terminal className="w-4 h-4" />
+                <span>K-Code Roadmap</span>
+              </button>
+              <button
                 onClick={() => setSelectedProduct('geomeridian')}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                   selectedProduct === 'geomeridian'
                     ? 'bg-violet-500 text-white shadow-lg shadow-violet-500/20'
                     : 'text-slate-400 hover:text-white'

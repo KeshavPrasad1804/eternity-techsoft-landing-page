@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProductKSign from '@/components/ProductKSign';
 import ProductGeomeridian from '@/components/ProductGeomeridian';
+import ProductKCode from '@/components/ProductKCode';
 import ProductComparison from '@/components/ProductComparison';
 import DeveloperPlayground from '@/components/DeveloperPlayground';
 import Services from '@/components/Services';
@@ -19,7 +20,7 @@ import FAQ from '@/components/FAQ';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import CommandPalette from '@/components/CommandPalette';
-import { Sparkles, ShieldCheck, Globe2 } from 'lucide-react';
+import { Sparkles, ShieldCheck, Globe2, Terminal } from 'lucide-react';
 
 export default function Home() {
   const [inquiryInitialMessage, setInquiryInitialMessage] = useState<string>('');
@@ -66,22 +67,29 @@ export default function Home() {
                     The Eternity Techsoft Proprietary Product Lab
                   </h2>
                   <p className="text-xs text-slate-400">
-                    We turn complex engineering challenges into market-defining platforms. Explore our two active builds below.
+                    We turn complex engineering challenges into market-defining platforms. Explore our three flagship builds below.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3">
                 <a
                   href="#ksign"
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs font-semibold text-cyan-300 hover:border-cyan-500/40 transition-colors"
+                  className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs font-semibold text-cyan-300 hover:border-cyan-500/40 transition-colors"
                 >
                   <ShieldCheck className="w-4 h-4 text-cyan-400" />
                   <span>K-Sign (Digital Trust)</span>
                 </a>
                 <a
+                  href="#kcode"
+                  className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs font-semibold text-emerald-300 hover:border-emerald-500/40 transition-colors"
+                >
+                  <Terminal className="w-4 h-4 text-emerald-400" />
+                  <span>K-Code (Agent Harness)</span>
+                </a>
+                <a
                   href="#geomeridian"
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs font-semibold text-violet-300 hover:border-violet-500/40 transition-colors"
+                  className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs font-semibold text-violet-300 hover:border-violet-500/40 transition-colors"
                 >
                   <Globe2 className="w-4 h-4 text-violet-400" />
                   <span>Geomeridian (GIS Platform)</span>
@@ -94,7 +102,10 @@ export default function Home() {
         {/* 3. Product Showcase 01: K-Sign with In-Browser Signing Simulator */}
         <ProductKSign />
 
-        {/* 4. Product Showcase 02: Geomeridian with Interactive Geospatial Radar */}
+        {/* 4. Product Showcase 02: K-Code with Interactive Worktree & Verification Harness */}
+        <ProductKCode />
+
+        {/* 5. Product Showcase 03: Geomeridian with Interactive Geospatial Radar */}
         <ProductGeomeridian />
 
         {/* 5. Competitive Battlecard Comparison (K-Sign & Geomeridian vs Legacy) */}

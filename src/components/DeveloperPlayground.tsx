@@ -9,11 +9,12 @@ import {
   Sparkles, 
   Code2,
   Cpu,
-  Layers
+  Layers,
+  Globe2
 } from 'lucide-react';
 
 export default function DeveloperPlayground() {
-  const [selectedSnippet, setSelectedSnippet] = useState<'ksign' | 'geomeridian' | 'webhook'>('ksign');
+  const [selectedSnippet, setSelectedSnippet] = useState<'ksign' | 'kcode' | 'geomeridian' | 'webhook'>('ksign');
   const [copied, setCopied] = useState(false);
 
   const snippets = {
@@ -52,31 +53,52 @@ console.log('Contract Sealed:', agreement.sha256Hash);`,
   "executionTimeMs": 48.2
 }`,
     },
+    kcode: {
+      lang: 'CLI / Shell',
+      fileName: 'kcode-verify.sh',
+      install: 'npx k-code@latest run --help',
+      code: `# Run autonomous repair in an isolated Git worktree
+npx k-code run \\
+  --target ./services/order-settlement \\
+  --task "Fix race condition in settlement consumer" \\
+  --test "npm test -- tests/settlement.spec.ts" \\
+  --worktree-isolated \\
+  --backend ollama:qwen2.5-coder:14b \\
+  --budget-tokens 50000 \\
+  --require-baseline-failure \\
+  --sqlite-journal .kcode/journal.db`,
+      response: `{
+  "status": "ACCEPTED",
+  "runId": "run_01j8m482",
+  "baseline": { "exitCode": 1, "failures": 1, "verified": true },
+  "worktree": ".kcode/worktrees/run-01j8m482",
+  "candidatePatch": "patch-01j8m482.diff",
+  "acceptanceCheck": { "exitCode": 0, "testsPassed": 18, "durationMs": 1420 },
+  "receiptsRecorded": 7,
+  "costAccounting": {
+    "tokensSpent": 1420,
+    "budgetRemaining": 48580,
+    "totalCostUsd": 0.00
+  }
+}`,
+    },
     geomeridian: {
       lang: 'Python',
       fileName: 'spatial_stream.py',
       install: 'pip install geomeridian-engine',
       code: `from geomeridian import SpatialEngine, GeofencePolygon
 
-engine = SpatialEngine(api_key="gm_live_secret_key")
+engine = SpatialEngine(api_key="geo_live_891048201948")
 
-# Define dynamic metropolitan geofence corridor
-corridor = GeofencePolygon.from_geojson({
-    "type": "Polygon",
-    "coordinates": [[
-        [-122.4194, 37.7749],
-        [-122.4089, 37.7858],
-        [-122.3951, 37.7650],
-        [-122.4194, 37.7749]
-    ]]
-})
+# Establish dynamic drone flight corridor
+corridor = GeofencePolygon.from_coordinates([
+    (37.7749, -122.4194),
+    (37.7858, -122.4089),
+    (37.7650, -122.3951)
+])
 
-# Stream live drone/telemetry coordinate ping
-telemetry = engine.telemetry.ingest(
-    vehicle_id="DRONE-ALPHA-09",
-    latitude=37.7758,
-    longitude=-122.4140,
-    altitude_m=42.5,
+telemetry = engine.stream_asset_location(
+    asset_id="DRONE-ALPHA-09",
     h3_resolution=9
 )
 
@@ -158,31 +180,48 @@ print(f"Containment verified: {is_inside}")`,
               onClick={() => setSelectedSnippet('ksign')}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold font-mono transition-all ${
                 selectedSnippet === 'ksign'
-                  ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20'
-                  : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
+                  ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/50 shadow-lg shadow-cyan-500/10'
+                  : 'bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800'
               }`}
             >
-              <span>TypeScript (K-Sign SDK)</span>
+              <FileCode2 className="w-3.5 h-3.5 text-cyan-400" />
+              <span>K-Sign SDK (TypeScript)</span>
             </button>
+
+            <button
+              onClick={() => setSelectedSnippet('kcode')}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold font-mono transition-all ${
+                selectedSnippet === 'kcode'
+                  ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 shadow-lg shadow-emerald-500/10'
+                  : 'bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800'
+              }`}
+            >
+              <Terminal className="w-3.5 h-3.5 text-emerald-400" />
+              <span>K-Code Agent (CLI)</span>
+            </button>
+
             <button
               onClick={() => setSelectedSnippet('geomeridian')}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold font-mono transition-all ${
                 selectedSnippet === 'geomeridian'
-                  ? 'bg-violet-500 text-white shadow-lg shadow-violet-500/20'
-                  : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
+                  ? 'bg-violet-500/20 text-violet-300 border border-violet-500/50 shadow-lg shadow-violet-500/10'
+                  : 'bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800'
               }`}
             >
-              <span>Python (Geomeridian GIS)</span>
+              <Globe2 className="w-3.5 h-3.5 text-violet-400" />
+              <span>Geomeridian (Python)</span>
             </button>
+
             <button
               onClick={() => setSelectedSnippet('webhook')}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold font-mono transition-all ${
                 selectedSnippet === 'webhook'
-                  ? 'bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20'
-                  : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
+                  ? 'bg-amber-500/20 text-amber-300 border border-amber-500/50 shadow-lg shadow-amber-500/10'
+                  : 'bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800'
               }`}
             >
-              <span>cURL (Webhook Stream)</span>
+              <Terminal className="w-3.5 h-3.5 text-amber-400" />
+              <span>Webhooks (cURL)</span>
             </button>
           </div>
         </div>

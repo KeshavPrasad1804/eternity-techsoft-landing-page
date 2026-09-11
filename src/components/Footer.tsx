@@ -53,7 +53,7 @@ export default function Footer() {
 
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
               Architecting mission-critical software services while incubating breakthrough proprietary platforms. 
-              Creators of <strong className="text-cyan-300">K-Sign</strong> (Cryptographic Trust) and <strong className="text-violet-300">Geomeridian</strong> (Spatial Intelligence).
+              Creators of <strong className="text-cyan-300">K-Sign</strong> (Cryptographic Trust), <strong className="text-emerald-300">K-Code</strong> (Autonomous AI Harness), and <strong className="text-violet-300">Geomeridian</strong> (Spatial Intelligence).
             </p>
 
             {/* Social Links */}
@@ -113,6 +113,12 @@ export default function Footer() {
                 <a href="#ksign" className="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-2">
                   <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
                   <span>K-Sign (Digital Signature Suite)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#kcode" className="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-2">
+                  <Terminal className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>K-Code (Agent Verification Harness)</span>
                 </a>
               </li>
               <li>

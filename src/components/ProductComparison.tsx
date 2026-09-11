@@ -6,6 +6,7 @@ import {
   X, 
   ShieldCheck, 
   Globe2, 
+  Terminal,
   Scale, 
   Sparkles, 
   ArrowRight,
@@ -13,7 +14,7 @@ import {
 } from 'lucide-react';
 
 export default function ProductComparison() {
-  const [activeTab, setActiveTab] = useState<'ksign' | 'geomeridian'>('ksign');
+  const [activeTab, setActiveTab] = useState<'ksign' | 'kcode' | 'geomeridian'>('ksign');
 
   const kSignRows = [
     {
@@ -54,6 +55,45 @@ export default function ProductComparison() {
     },
   ];
 
+  const kCodeRows = [
+    {
+      feature: 'Working Tree Safety',
+      ksign: 'Isolated Git worktrees; local developer working directory stays 100% clean',
+      legacy: 'Directly edits files in place, risking uncommitted work and broken state',
+      highlight: true,
+    },
+    {
+      feature: 'Verification Guarantee',
+      ksign: 'Requires independent baseline test failure proof before accepting fixes',
+      legacy: 'Prone to hallucinated passes; agents frequently delete or modify tests',
+      highlight: true,
+    },
+    {
+      feature: 'Crash Recovery',
+      ksign: 'SQLite state journal persists receipts; instant mid-run resume in < 50ms',
+      legacy: 'Process death loses full context; requires restarting from scratch',
+      highlight: true,
+    },
+    {
+      feature: 'Cost Accountability',
+      ksign: 'Strict token reservation ledgers with child descendant budget ceilings',
+      legacy: 'Uncapped loops resulting in surprise $50–$500 cloud billing charges',
+      highlight: true,
+    },
+    {
+      feature: 'Local & Air-Gapped Models',
+      ksign: 'Native Ollama support for 100% local, zero-leak private code repair',
+      legacy: 'Mandatory cloud vendor lock-in sending proprietary source to third parties',
+      highlight: false,
+    },
+    {
+      feature: 'Protocol Standards',
+      ksign: 'Full support for Model Context Protocol (MCP) and Agent Client Protocol (ACP)',
+      legacy: 'Proprietary vendor APIs with no open protocol extensibility',
+      highlight: false,
+    },
+  ];
+
   const geoRows = [
     {
       feature: 'Rendering Performance',
@@ -87,7 +127,7 @@ export default function ProductComparison() {
     },
   ];
 
-  const currentRows = activeTab === 'ksign' ? kSignRows : geoRows;
+  const currentRows = activeTab === 'ksign' ? kSignRows : activeTab === 'kcode' ? kCodeRows : geoRows;
 
   return (
     <section id="comparison" className="py-24 relative overflow-hidden scroll-mt-20">
@@ -108,16 +148,16 @@ export default function ProductComparison() {
           </h2>
 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-            We built K-Sign and Geomeridian because we were frustrated by the predatory pricing, 
-            sluggish rendering, and closed ecosystems of incumbent software.
+            We built K-Sign, K-Code, and Geomeridian because we were frustrated by predatory pricing, 
+            sluggish rendering, and brittle black-box AI tools that lack verifiable proof.
           </p>
 
           {/* Toggle Tabs */}
           <div className="flex justify-center pt-4">
-            <div className="inline-flex p-1.5 rounded-2xl bg-slate-900/90 border border-slate-800">
+            <div className="inline-flex flex-wrap justify-center p-1.5 rounded-2xl bg-slate-900/90 border border-slate-800 gap-1">
               <button
                 onClick={() => setActiveTab('ksign')}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                   activeTab === 'ksign'
                     ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20'
                     : 'text-slate-400 hover:text-white'
@@ -127,8 +167,19 @@ export default function ProductComparison() {
                 <span>K-Sign vs. Legacy E-Sign</span>
               </button>
               <button
+                onClick={() => setActiveTab('kcode')}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                  activeTab === 'kcode'
+                    ? 'bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/20'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                <Terminal className="w-4 h-4" />
+                <span>K-Code vs. AI Wrappers</span>
+              </button>
+              <button
                 onClick={() => setActiveTab('geomeridian')}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                   activeTab === 'geomeridian'
                     ? 'bg-violet-500 text-white shadow-lg shadow-violet-500/20'
                     : 'text-slate-400 hover:text-white'
@@ -146,12 +197,17 @@ export default function ProductComparison() {
           <div className="grid grid-cols-12 bg-slate-950/80 px-6 py-4 border-b border-slate-800 text-xs font-mono uppercase tracking-wider text-slate-400">
             <div className="col-span-4 sm:col-span-3">Capability Matrix</div>
             <div className={`col-span-4 sm:col-span-5 font-bold flex items-center gap-1.5 ${
-              activeTab === 'ksign' ? 'text-cyan-400' : 'text-violet-400'
+              activeTab === 'ksign' ? 'text-cyan-400' : activeTab === 'kcode' ? 'text-emerald-400' : 'text-violet-400'
             }`}>
               {activeTab === 'ksign' ? (
                 <>
                   <ShieldCheck className="w-4 h-4" />
                   <span>K-Sign (Eternity Techsoft)</span>
+                </>
+              ) : activeTab === 'kcode' ? (
+                <>
+                  <Terminal className="w-4 h-4" />
+                  <span>K-Code (Eternity Techsoft)</span>
                 </>
               ) : (
                 <>
@@ -161,7 +217,7 @@ export default function ProductComparison() {
               )}
             </div>
             <div className="col-span-4 sm:col-span-4 text-slate-500">
-              {activeTab === 'ksign' ? 'Legacy E-Signature Vendors' : 'Traditional GIS Software'}
+              {activeTab === 'ksign' ? 'Legacy E-Signature Vendors' : activeTab === 'kcode' ? 'Uncontrolled AI Coding Tools' : 'Traditional GIS Software'}
             </div>
           </div>
 

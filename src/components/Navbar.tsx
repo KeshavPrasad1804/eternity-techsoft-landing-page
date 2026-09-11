@@ -12,7 +12,8 @@ import {
   Search,
   FileCode2,
   GitBranch,
-  Scale
+  Scale,
+  Terminal
 } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { COMPANY_INFO } from '@/data/company';
@@ -91,7 +92,7 @@ export default function Navbar({ onOpenCommandPalette }: NavbarProps) {
             >
               <span>Products</span>
               <span className="px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 rounded-full font-mono">
-                2 Builds
+                3 Builds
               </span>
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${productsDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -114,6 +115,25 @@ export default function Navbar({ onOpenCommandPalette }: NavbarProps) {
                     </div>
                     <p className="text-xs text-slate-400 mt-0.5 line-clamp-2">
                       Cryptographic e-signature suite & tamper-evident contract automation.
+                    </p>
+                  </div>
+                </a>
+
+                <a
+                  href="#kcode"
+                  onClick={() => setProductsDropdownOpen(false)}
+                  className="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-800/70 border border-transparent hover:border-emerald-500/30 transition-all group mt-1"
+                >
+                  <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 group-hover:bg-emerald-500/20 transition-colors shrink-0">
+                    <Terminal className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-semibold text-white group-hover:text-emerald-300 transition-colors">K-Code</span>
+                      <span className="text-[9px] px-1.5 py-0.2 bg-emerald-500/10 text-emerald-300 rounded border border-emerald-500/20 font-mono">ACTIVE DEV</span>
+                    </div>
+                    <p className="text-xs text-slate-400 mt-0.5 line-clamp-2">
+                      Deterministic coding-agent harness with isolated git worktrees & verified proof.
                     </p>
                   </div>
                 </a>
@@ -280,6 +300,17 @@ export default function Navbar({ onOpenCommandPalette }: NavbarProps) {
                 <span>K-Sign (Digital Signature)</span>
               </div>
               <span className="text-[10px] px-2 py-0.5 bg-cyan-500/20 text-cyan-300 rounded font-mono">LAB</span>
+            </a>
+            <a
+              href="#kcode"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-sm font-medium text-slate-200"
+            >
+              <div className="flex items-center gap-2.5">
+                <Terminal className="w-4 h-4 text-emerald-400" />
+                <span>K-Code (Agent Harness)</span>
+              </div>
+              <span className="text-[10px] px-2 py-0.5 bg-emerald-500/20 text-emerald-300 rounded font-mono">LAB</span>
             </a>
             <a
               href="#geomeridian"

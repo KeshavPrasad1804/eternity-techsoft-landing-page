@@ -102,6 +102,25 @@ export default function JsonLd() {
       },
       {
         '@type': 'SoftwareApplication',
+        '@id': 'https://eternitytechsoft.com/#kcode',
+        name: 'K-Code',
+        operatingSystem: 'Node.js, Linux, macOS, Docker',
+        applicationCategory: 'DeveloperApplication',
+        description:
+          'Autonomous coding-agent harness with isolated git worktrees, reproducible baseline failure evidence, SQLite crash recovery, and token spend budget metering.',
+        url: 'https://eternitytechsoft.com/#kcode',
+        author: {
+          '@id': 'https://eternitytechsoft.com/#organization',
+        },
+        offers: {
+          '@type': 'Offer',
+          price: '0.00',
+          priceCurrency: 'USD',
+          description: 'Developer Preview & Open Architecture',
+        },
+      },
+      {
+        '@type': 'SoftwareApplication',
         '@id': 'https://eternitytechsoft.com/#geomeridian',
         name: 'Geomeridian',
         operatingSystem: 'Web, WebGPU, Cloud, Kubernetes',

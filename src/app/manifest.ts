@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Eternity Techsoft',
     short_name: 'Eternity Tech',
     description:
-      'High-impact software engineering services and flagship products (K-Sign & Geomeridian).',
+      'High-impact software engineering services and flagship products (K-Sign, K-Code & Geomeridian).',
     start_url: '/',
     display: 'standalone',
     background_color: '#06080d',

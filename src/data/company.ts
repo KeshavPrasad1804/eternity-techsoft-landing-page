@@ -2,7 +2,7 @@ export const COMPANY_INFO = {
   name: 'Eternity Techsoft',
   tagline: 'Engineering the Next Paradigm of Software Services & Flagship Products',
   shortDescription:
-    'Eternity Techsoft is a software service and product company. We build mission-critical digital systems for forward-thinking enterprises while incubating world-class proprietary platforms like K-Sign and Geomeridian.',
+    'Eternity Techsoft is a software service and product company. We build mission-critical digital systems for forward-thinking enterprises while incubating world-class proprietary platforms like K-Sign, K-Code, and Geomeridian.',
   email: 'contact@eternitytechsoft.com',
   careersEmail: 'careers@eternitytechsoft.com',
   address: 'Global Technology Operations & Digital Labs',
@@ -26,9 +26,9 @@ export const STATS = [
     description: 'Optimized microservices and edge compute delivery',
   },
   {
-    value: '2 Flagships',
+    value: '3 Flagships',
     label: 'Proprietary Products in Lab',
-    description: 'K-Sign (Digital Trust) & Geomeridian (GIS Intelligence)',
+    description: 'K-Sign (Digital Trust), K-Code (AI Harness) & Geomeridian (GIS)',
   },
   {
     value: 'Zero Debt',

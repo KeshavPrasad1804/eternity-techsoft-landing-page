@@ -17,7 +17,7 @@ import {
 import { STATS, COMPANY_INFO } from '@/data/company';
 
 export default function Hero() {
-  const [activeConsoleTab, setActiveConsoleTab] = useState<'overview' | 'ksign' | 'geomeridian'>('overview');
+  const [activeConsoleTab, setActiveConsoleTab] = useState<'overview' | 'ksign' | 'kcode' | 'geomeridian'>('overview');
   const [pulseCounter, setPulseCounter] = useState(1284);
 
   useEffect(() => {
@@ -65,7 +65,7 @@ export default function Hero() {
             {/* Subhead with explicit mentions */}
             <p className="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl">
               We partner with founders and enterprise leaders to take ambitious software from idea to production in rapid 2-week sprints. 
-              Built with the same battle-tested engineering behind our own flagship platforms: <span className="text-cyan-300 underline underline-offset-4 decoration-cyan-500/40 font-medium">K-Sign</span> (tamper-proof digital contracts) and <span className="text-violet-300 underline underline-offset-4 decoration-violet-500/40 font-medium">Geomeridian</span> (real-time live maps & fleet tracking).
+              Built with the same battle-tested engineering behind our own flagship platforms: <span className="text-cyan-300 underline underline-offset-4 decoration-cyan-500/40 font-medium">K-Sign</span> (tamper-proof digital contracts), <span className="text-emerald-300 underline underline-offset-4 decoration-emerald-500/40 font-medium">K-Code</span> (verified coding-agent harness), and <span className="text-violet-300 underline underline-offset-4 decoration-violet-500/40 font-medium">Geomeridian</span> (real-time live maps & fleet tracking).
             </p>
 
             {/* Founder Reassurance & Trust Badges */}
@@ -90,7 +90,7 @@ export default function Hero() {
                 href="#products"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-cyan-300 to-teal-300 hover:from-cyan-300 hover:to-teal-200 shadow-xl shadow-cyan-500/25 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] text-sm"
               >
-                <span>Explore Products (K-Sign & Geomeridian)</span>
+                <span>Explore Products (K-Sign, K-Code & Geomeridian)</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -147,10 +147,10 @@ export default function Hero() {
               </div>
 
               {/* Console Tabs */}
-              <div className="grid grid-cols-3 bg-slate-950/60 border-b border-slate-800 text-xs font-medium">
+              <div className="grid grid-cols-2 sm:grid-cols-4 bg-slate-950/60 border-b border-slate-800 text-[11px] font-medium">
                 <button
                   onClick={() => setActiveConsoleTab('overview')}
-                  className={`py-2 px-3 text-center transition-colors border-b-2 ${
+                  className={`py-2 px-2 text-center transition-colors border-b-2 ${
                     activeConsoleTab === 'overview'
                       ? 'border-cyan-400 text-cyan-300 bg-cyan-500/5'
                       : 'border-transparent text-slate-400 hover:text-slate-200'
@@ -160,7 +160,7 @@ export default function Hero() {
                 </button>
                 <button
                   onClick={() => setActiveConsoleTab('ksign')}
-                  className={`py-2 px-3 text-center transition-colors border-b-2 ${
+                  className={`py-2 px-2 text-center transition-colors border-b-2 ${
                     activeConsoleTab === 'ksign'
                       ? 'border-cyan-400 text-cyan-300 bg-cyan-500/5'
                       : 'border-transparent text-slate-400 hover:text-slate-200'
@@ -169,8 +169,18 @@ export default function Hero() {
                   K-Sign Engine
                 </button>
                 <button
+                  onClick={() => setActiveConsoleTab('kcode')}
+                  className={`py-2 px-2 text-center transition-colors border-b-2 ${
+                    activeConsoleTab === 'kcode'
+                      ? 'border-emerald-400 text-emerald-300 bg-emerald-500/5'
+                      : 'border-transparent text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  K-Code Harness
+                </button>
+                <button
                   onClick={() => setActiveConsoleTab('geomeridian')}
-                  className={`py-2 px-3 text-center transition-colors border-b-2 ${
+                  className={`py-2 px-2 text-center transition-colors border-b-2 ${
                     activeConsoleTab === 'geomeridian'
                       ? 'border-violet-400 text-violet-300 bg-violet-500/5'
                       : 'border-transparent text-slate-400 hover:text-slate-200'
@@ -193,9 +203,17 @@ export default function Hero() {
                       <div className="flex items-center justify-between p-2 rounded bg-slate-900/60 border border-slate-800">
                         <div className="flex items-center gap-2">
                           <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                          <span className="text-slate-200">K-Sign Crypto Orchestrator</span>
+                          <span className="text-slate-200">K-Sign Crypto Vault</span>
                         </div>
                         <span className="text-cyan-400 font-bold">ACTIVE (v0.9.4)</span>
+                      </div>
+
+                      <div className="flex items-center justify-between p-2 rounded bg-slate-900/60 border border-slate-800">
+                        <div className="flex items-center gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                          <span className="text-slate-200">K-Code Verification Harness</span>
+                        </div>
+                        <span className="text-emerald-400 font-bold">VERIFYING (v0.4.1)</span>
                       </div>
 
                       <div className="flex items-center justify-between p-2 rounded bg-slate-900/60 border border-slate-800">
@@ -219,6 +237,42 @@ export default function Hero() {
                       <div>&gt; requests_processed: <span className="text-cyan-400">{pulseCounter.toLocaleString()} tx/sec</span></div>
                       <div>&gt; latency_p99: <span className="text-emerald-400">32.4ms</span></div>
                       <div>&gt; edge_routing: <span className="text-slate-300">Vercel Edge Network (Global)</span></div>
+                    </div>
+                  </div>
+                )}
+
+                {activeConsoleTab === 'kcode' && (
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between text-emerald-400 font-semibold pb-1 border-b border-slate-800">
+                      <span className="flex items-center gap-1.5">
+                        <Terminal className="w-4 h-4" />
+                        K-CODE AGENT HARNESS
+                      </span>
+                      <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono">
+                        Isolated Worktree
+                      </span>
+                    </div>
+
+                    <div className="p-2.5 rounded bg-slate-900/80 border border-slate-800/80 space-y-1 text-[11px]">
+                      <div className="text-slate-400">BASELINE REPRODUCTION EVIDENCE:</div>
+                      <div className="text-emerald-300 truncate font-mono">
+                        EXIT_1_VERIFIED: tests/settlement.spec.ts (unmodified HEAD)
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-2 text-[11px]">
+                      <div className="p-2 bg-slate-900/60 border border-slate-800 rounded">
+                        <span className="text-slate-400 block">Worktree Sandbox:</span>
+                        <span className="text-emerald-400 font-bold">.kcode/worktrees/482</span>
+                      </div>
+                      <div className="p-2 bg-slate-900/60 border border-slate-800 rounded">
+                        <span className="text-slate-400 block">SQLite State Ledger:</span>
+                        <span className="text-cyan-400 font-bold">7 durable receipts</span>
+                      </div>
+                    </div>
+
+                    <div className="text-[11px] text-slate-500 pt-1">
+                      &gt; kcode_status: Candidate patch verified. Zero test rewrites permitted.
                     </div>
                   </div>
                 )}

@@ -23,13 +23,16 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://eternitytechsoft.com"),
   title: "Eternity Techsoft | High-Impact Software Services & Flagship Products",
   description:
-    "Eternity Techsoft is a premier software engineering services and product development company. Creators of K-Sign (Digital Trust & E-Sign Suite) and Geomeridian (Geospatial Intelligence Platform).",
+    "Eternity Techsoft is a premier software engineering services and product development company. Creators of K-Sign (Digital Trust & E-Sign Suite), K-Code (Autonomous Coding-Agent Harness), and Geomeridian (Geospatial Intelligence Platform).",
   keywords: [
     "Eternity Techsoft",
     "software development company",
     "enterprise software services",
     "K-Sign",
     "digital signature software",
+    "K-Code",
+    "coding agent harness",
+    "AI code verification",
     "Geomeridian",
     "GIS software",
     "geospatial intelligence",
@@ -44,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Eternity Techsoft | Software Services & Flagship Products",
     description:
-      "Engineering the future of enterprise software, digital trust with K-Sign, and geospatial intelligence with Geomeridian.",
+      "Engineering the future of enterprise software, digital trust with K-Sign, autonomous coding with K-Code, and geospatial intelligence with Geomeridian.",
     url: "https://eternitytechsoft.com",
     siteName: "Eternity Techsoft",
     locale: "en_US",
@@ -54,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Eternity Techsoft | Software Services & Flagship Products",
     description:
-      "Enterprise software engineering services & creators of K-Sign and Geomeridian.",
+      "Enterprise software engineering services & creators of K-Sign, K-Code, and Geomeridian.",
   },
   icons: {
     icon: [

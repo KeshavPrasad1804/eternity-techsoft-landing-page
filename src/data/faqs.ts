@@ -10,9 +10,9 @@ export const FAQS: FAQItem[] = [
       'You own 100% of the Intellectual Property from day one. All repositories, commit histories, infrastructure definitions, design assets, and credentials belong entirely to your organization upon milestone completion. We provide automated CI/CD handovers with clean documentation.',
   },
   {
-    question: 'Can K-Sign and Geomeridian be self-hosted in our own private cloud?',
+    question: 'Can K-Sign, K-Code, and Geomeridian be self-hosted in our own private cloud?',
     answer:
-      'Yes. In addition to our multi-tenant SaaS cloud, both K-Sign and Geomeridian are packaged into containerized Docker and Helm/Kubernetes appliances. You can deploy them directly within your air-gapped AWS, Google Cloud, Azure, or on-premise infrastructure to satisfy strict banking, medical, or government data residency mandates.',
+      'Yes. In addition to our multi-tenant SaaS cloud, K-Sign, K-Code, and Geomeridian are packaged into containerized Docker and Helm/Kubernetes appliances. You can deploy them directly within your air-gapped AWS, Google Cloud, Azure, or on-premise infrastructure to satisfy strict banking, medical, or government data residency mandates.',
   },
   {
     question: 'How do you protect confidentiality and sensitive business logic?',
@@ -33,5 +33,10 @@ export const FAQS: FAQItem[] = [
     question: 'How do you prevent the technical debt common in agency work?',
     answer:
       'We treat client codebases with the exact same engineering rigor as our proprietary flagship platforms. That means 100% TypeScript type-safety, automated linting pipelines, strict unit and integration testing gates, modular microservices architecture, and clean decoupled components.',
+  },
+  {
+    question: 'How does K-Code differ from mainstream AI coding tools like Cursor or Devin?',
+    answer:
+      'Mainstream coding assistants edit code directly in the developer’s active workspace, risk runaway token spend loops, and frequently hallucinate passing tests by rewriting test assertions. K-Code is an enterprise verification harness: it isolates all candidate patches in disposable git worktrees, requires independent baseline proof that a bug genuinely failed before touching code, meters tokens via hard reservation ledgers, and logs durable receipts in SQLite to survive crashes.',
   },
 ];

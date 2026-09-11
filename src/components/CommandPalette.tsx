@@ -17,7 +17,8 @@ import {
   ArrowRight,
   Activity,
   Scale,
-  Shield
+  Shield,
+  Terminal
 } from 'lucide-react';
 
 interface CommandPaletteProps {
@@ -52,6 +53,13 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
       category: 'Flagship Product',
       icon: <ShieldCheck className="w-4 h-4 text-cyan-400" />,
       target: '#ksign',
+    },
+    {
+      id: 'kcode',
+      title: 'K-Code: Agent Harness & Worktree Verification Console',
+      category: 'Flagship Product',
+      icon: <Terminal className="w-4 h-4 text-emerald-400" />,
+      target: '#kcode',
     },
     {
       id: 'geomeridian',

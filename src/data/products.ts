@@ -122,4 +122,55 @@ export const PRODUCTS: Product[] = [
     ],
     techPills: ['WebGPU / WebGL', 'PostGIS', 'Golang', 'Next.js', 'Mapbox GL / Deck.gl', 'Kafka', 'Python'],
   },
+  {
+    id: 'k-code',
+    name: 'K-Code',
+    tagline: 'Deterministic Coding-Agent Harness with Isolated Worktrees & Verifiable Proof',
+    category: 'Autonomous Agent Infrastructure & Verified Code Repair',
+    status: 'In Active Development',
+    badgeColor: 'emerald',
+    description:
+      'A resilient coding-agent harness engineered to inspect, patch, and test repositories with isolated git worktrees, reproducible baseline evidence, crash recovery, and token budget metering.',
+    longDescription:
+      'K-Code transforms generative coding from unverified guesswork into deterministic, auditable software engineering. Unlike black-box agent tools that corrupt working trees or hallucinate test passes, K-Code runs agents in isolated git worktrees, proves baseline failure reproduction before touching code, persists durable execution receipts in SQLite, and enforces hard token spend budgets.',
+    features: [
+      {
+        title: 'Isolated Git Worktrees',
+        description: 'Candidate patches develop and execute in disposable git worktrees. Your local branch and dirty working tree remain 100% untouched.',
+        icon: 'GitBranch',
+      },
+      {
+        title: 'Independent Baseline Evidence',
+        description: 'Proves the target test genuinely fails on clean source code before any LLM intervention, permanently eliminating false-positive fixes.',
+        icon: 'ShieldAlert',
+      },
+      {
+        title: 'Crash-Resilient SQLite Journal',
+        description: 'State machine persists streaming receipts to SQLite. Kill or resume agent processes mid-run without re-spending LLM tokens or re-applying patches.',
+        icon: 'Database',
+      },
+      {
+        title: 'Deterministic Cost Accounting',
+        description: 'Token reservation ledgers with child descendant budget caps stop infinite agent loops and runaway cloud API billing spikes.',
+        icon: 'Coins',
+      },
+      {
+        title: 'Multi-Backend & Local Ollama',
+        description: 'Run air-gapped on local Ollama models or supervise frontier reasoning models (Claude 3.7, GPT-4o) with strict tool boundaries.',
+        icon: 'Terminal',
+      },
+      {
+        title: 'Final Acceptance Gate',
+        description: 'Patches are admitted only after automated independent re-execution against unmodified test suites with tamper-evident audit journals.',
+        icon: 'CheckCircle2',
+      },
+    ],
+    metrics: [
+      { label: 'Baseline Verification', value: '100% Proven' },
+      { label: 'Worktree Isolation', value: 'Zero Repo Pollution' },
+      { label: 'Recovery Overhead', value: '< 50ms Resume' },
+      { label: 'Budget Enforcement', value: 'Hard Ceiling' },
+    ],
+    techPills: ['Node.js', 'TypeScript', 'Git Worktrees', 'SQLite', 'Ollama', 'Model Context Protocol (MCP)', 'Agent Client Protocol (ACP)'],
+  },
 ];
