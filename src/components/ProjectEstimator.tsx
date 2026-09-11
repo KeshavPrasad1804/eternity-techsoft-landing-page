@@ -189,7 +189,7 @@ export default function ProjectEstimator({ onSelectScope }: ProjectEstimatorProp
           </div>
 
           {/* Output / Recommendation Card (5 cols) */}
-          <div className="lg:col-span-5 p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-[#0c101b] to-slate-950 border-2 border-cyan-500/30 shadow-2xl shadow-cyan-950/40 space-y-6">
+          <div className="estimator-recommendation-card lg:col-span-5 p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-[#0c101b] to-slate-950 border-2 border-cyan-500/30 shadow-2xl shadow-cyan-950/40 space-y-6">
             
             <div className="flex items-center justify-between pb-4 border-b border-slate-800">
               <div className="flex items-center gap-2">

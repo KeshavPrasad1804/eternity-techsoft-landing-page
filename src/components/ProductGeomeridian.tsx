@@ -241,7 +241,7 @@ export default function ProductGeomeridian() {
           
           {/* Interactive Geospatial Radar Inspector (6 cols) */}
           <div className="lg:col-span-6">
-            <div className="rounded-2xl bg-[#0c101b] border-2 border-violet-500/30 shadow-2xl shadow-purple-950/60 overflow-hidden relative">
+            <div className="geomeridian-preview-card rounded-2xl bg-[#0c101b] border-2 border-violet-500/30 shadow-2xl shadow-purple-950/60 overflow-hidden relative">
               
               {/* Header with Layer Switcher */}
               <div className="p-4 bg-gradient-to-r from-slate-900 via-slate-900/90 to-violet-950/40 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3">

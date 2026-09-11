@@ -152,7 +152,7 @@ html.light ::-webkit-scrollbar-thumb:hover {
 }
 
 /* ==========================================================================
-   LIGHT MODE COMPREHENSIVE ADAPTATIONS
+   LIGHT MODE COMPREHENSIVE ADAPTATIONS (PREMIUM ENTERPRISE SPEC)
    ========================================================================== */
 html.light body {
   background-color: #f8fafc !important;
@@ -163,43 +163,33 @@ html.light .bg-\[\#06080d\] {
   background-color: #f8fafc !important;
 }
 
-html.light .bg-\[\#0c101b\] {
-  background-color: #ffffff !important;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04) !important;
-}
-
-html.light .bg-\[\#0c101b\]\/70,
-html.light .bg-\[\#0c101b\]\/80,
-html.light .bg-\[\#0c101b\]\/90,
-html.light .bg-\[\#0c101b\]\/95 {
-  background-color: rgba(255, 255, 255, 0.92) !important;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04) !important;
-}
-
-html.light .bg-\[\#0a0e19\],
 html.light .bg-\[\#07090e\],
 html.light .bg-\[\#05070a\] {
   background-color: #f1f5f9 !important;
 }
 
-html.light .bg-slate-900,
-html.light .bg-slate-900\/50,
-html.light .bg-slate-900\/60,
-html.light .bg-slate-900\/70,
-html.light .bg-slate-900\/80,
-html.light .bg-slate-900\/90 {
-  background-color: #f1f5f9 !important;
+html.light .bg-\[\#0a0e19\] {
+  background-color: #ffffff !important;
 }
 
-html.light .bg-slate-950,
-html.light .bg-slate-950\/40,
-html.light .bg-slate-950\/60,
-html.light .bg-slate-950\/70,
-html.light .bg-slate-950\/80,
-html.light .bg-slate-950\/90 {
-  background-color: #e2e8f0 !important;
+/* Base Cards & Elevated Glass Surfaces */
+html.light .bg-\[\#0c101b\],
+html.light .bg-\[\#0c101b\]\/70,
+html.light .bg-\[\#0c101b\]\/80,
+html.light .bg-\[\#0c101b\]\/90,
+html.light .bg-\[\#0c101b\]\/95 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.02) !important;
 }
 
+html.light .glass-panel {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Subtle Borders across layout */
 html.light .border-slate-800,
 html.light .border-slate-800\/60,
 html.light .border-slate-800\/70,
@@ -213,8 +203,29 @@ html.light .border-slate-900 {
   border-color: #e2e8f0 !important;
 }
 
-html.light .text-white {
+/* Background Grids */
+html.light .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px) !important;
+}
+
+html.light .bg-dot-pattern {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px) !important;
+}
+
+/* Typography Standards */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
   color: #0f172a !important;
+}
+
+html.light .text-white {
+  color: #0f172a;
 }
 
 html.light .text-slate-100,
@@ -226,20 +237,12 @@ html.light .text-slate-300 {
   color: #334155 !important;
 }
 
-html.light .text-slate-400 {
-  color: #64748b !important;
-}
-
+html.light .text-slate-400,
 html.light .text-slate-500 {
   color: #64748b !important;
 }
 
-html.light .bg-grid-pattern {
-  background-image: 
-    linear-gradient(to right, rgba(15, 23, 42, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.06) 1px, transparent 1px) !important;
-}
-
+/* High-Contrast Gradient Headings in Light Mode */
 html.light .text-gradient-cyan {
   background: linear-gradient(135deg, #0f172a 0%, #0284c7 50%, #0891b2 100%) !important;
   -webkit-background-clip: text !important;
@@ -247,22 +250,130 @@ html.light .text-gradient-cyan {
 }
 
 html.light .text-gradient-violet {
-  background: linear-gradient(135deg, #0f172a 0%, #6366f1 50%, #7c3aed 100%) !important;
+  background: linear-gradient(135deg, #0f172a 0%, #4f46e5 50%, #7c3aed 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
 
 html.light .text-gradient-brand {
-  background: linear-gradient(135deg, #0284c7 0%, #6366f1 50%, #9333ea 100%) !important;
+  background: linear-gradient(135deg, #0284c7 0%, #6366f1 50%, #8b5cf6 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
+}
+
+/* Pill Badges & Chips (Clear contrast, no washed-out text) */
+html.light .text-cyan-300,
+html.light .text-cyan-400 {
+  color: #0284c7 !important;
+}
+html.light .bg-cyan-500\/10,
+html.light .bg-cyan-500\/15,
+html.light .bg-cyan-500\/20 {
+  background-color: #ecfeff !important;
+  color: #0e7490 !important;
+}
+html.light .border-cyan-500\/20,
+html.light .border-cyan-500\/30,
+html.light .border-cyan-500\/40 {
+  border-color: #a5f3fc !important;
+}
+
+html.light .text-violet-300,
+html.light .text-violet-400,
+html.light .text-purple-300 {
+  color: #6d28d9 !important;
+}
+html.light .bg-violet-500\/10,
+html.light .bg-violet-500\/20,
+html.light .bg-purple-500\/10 {
+  background-color: #f5f3ff !important;
+  color: #6d28d9 !important;
+}
+html.light .border-violet-500\/20,
+html.light .border-violet-500\/30,
+html.light .border-purple-500\/30 {
+  border-color: #ddd6fe !important;
+}
+
+html.light .text-emerald-300,
+html.light .text-emerald-400 {
+  color: #047857 !important;
+}
+html.light .bg-emerald-500\/10,
+html.light .bg-emerald-500\/20 {
+  background-color: #ecfdf5 !important;
+  color: #047857 !important;
+}
+html.light .border-emerald-500\/20,
+html.light .border-emerald-500\/30 {
+  border-color: #a7f3d0 !important;
+}
+
+html.light .text-amber-400 {
+  color: #b45309 !important;
+}
+html.light .bg-amber-500\/10,
+html.light .bg-amber-500\/20 {
+  background-color: #fffbeb !important;
+  color: #b45309 !important;
+}
+html.light .border-amber-500\/20,
+html.light .border-amber-500\/30 {
+  border-color: #fde68a !important;
+}
+
+/* Secondary Badges & Slate Buttons */
+html.light .bg-slate-900,
+html.light .bg-slate-900\/50,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-900\/70,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/90 {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+html.light .bg-slate-950,
+html.light .bg-slate-950\/40,
+html.light .bg-slate-950\/60,
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950\/80,
+html.light .bg-slate-950\/90 {
+  background-color: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
 }
 
 /* Header in light mode */
 html.light header.bg-\[\#06080d\]\/90 {
   background-color: rgba(255, 255, 255, 0.9) !important;
-  border-color: rgba(226, 232, 240, 0.9) !important;
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06) !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05) !important;
+}
+
+html.light header a,
+html.light header button {
+  color: #334155 !important;
+}
+html.light header a:hover,
+html.light header button:hover {
+  color: #0f172a !important;
+}
+
+html.light header .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+/* Preserve Primary CTA Buttons Contrast */
+html.light a.bg-gradient-to-r,
+html.light button.bg-gradient-to-r,
+html.light a[href="#contact"].bg-gradient-to-r,
+html.light .bg-cyan-400,
+html.light .bg-cyan-500 {
+  color: #022c22 !important;
+  font-weight: 700 !important;
 }
 
 /* Footer in light mode */
@@ -271,28 +382,237 @@ html.light footer.bg-\[\#05070a\] {
   border-color: #e2e8f0 !important;
 }
 
-/* Preserve terminal & radar dark console style for developer aesthetic */
-html.light #developer .bg-\[\#0c101b\],
-html.light #developer .bg-black\/50,
-html.light #developer .bg-slate-950\/80,
-html.light #developer .bg-slate-950\/90,
-html.light #developer .bg-slate-900\/50 {
-  background-color: #0f172a !important;
+/* ==========================================================================
+   DEVELOPER PLAYGROUND & HERO TELEMETRY OBSIDIAN TERMINAL PRESERVATION
+   ========================================================================== */
+html.light .developer-terminal-box,
+html.light .hero-telemetry-box {
+  background-color: #0c101b !important;
+  border: 1px solid #1e293b !important;
+  box-shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.25) !important;
+}
+
+html.light .developer-terminal-box .text-white,
+html.light .hero-telemetry-box .text-white {
+  color: #f8fafc !important;
+}
+html.light .developer-terminal-box .text-slate-200,
+html.light .hero-telemetry-box .text-slate-200,
+html.light .developer-terminal-box .text-slate-300,
+html.light .hero-telemetry-box .text-slate-300 {
+  color: #cbd5e1 !important;
+}
+html.light .developer-terminal-box .text-slate-400,
+html.light .hero-telemetry-box .text-slate-400 {
+  color: #94a3b8 !important;
+}
+html.light .developer-terminal-box .bg-slate-950\/80,
+html.light .developer-terminal-box .bg-slate-900,
+html.light .hero-telemetry-box .bg-slate-900\/90,
+html.light .hero-telemetry-box .bg-slate-950\/60,
+html.light .hero-telemetry-box .bg-slate-900\/60 {
+  background-color: #080b13 !important;
   border-color: #1e293b !important;
 }
 
-html.light #developer .text-slate-200,
-html.light #developer .text-slate-300,
-html.light #developer .text-slate-400,
-html.light #developer .text-white {
-  color: #e2e8f0 !important;
+/* Developer Outer Tabs in Light Mode */
+html.light #developer button:not(.developer-terminal-box button) {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+}
+html.light #developer button:not(.developer-terminal-box button):hover {
+  border-color: #0f172a;
+  color: #0f172a;
+}
+html.light #developer button.bg-cyan-500 {
+  background-color: #06b6d4 !important;
+  color: #022c22 !important;
+  border-color: transparent !important;
+}
+html.light #developer button.bg-violet-500 {
+  background-color: #7c3aed !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+html.light #developer button.bg-amber-500 {
+  background-color: #f59e0b !important;
+  color: #022c22 !important;
+  border-color: transparent !important;
 }
 
+/* ==========================================================================
+   ESTIMATOR LIGHT MODE BLUEPRINT CARD
+   ========================================================================== */
+html.light #estimator .bg-slate-900\/60 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+}
+html.light #estimator .bg-slate-900\/60:hover {
+  border-color: #06b6d4 !important;
+  color: #0f172a !important;
+  background-color: #f8fafc !important;
+}
+html.light #estimator .bg-slate-900\/60 .text-white {
+  color: #0f172a !important;
+}
+html.light #estimator .bg-cyan-500\/10 {
+  background-color: #ecfeff !important;
+  border-color: #06b6d4 !important;
+}
+html.light #estimator .bg-cyan-500\/10 .text-white {
+  color: #0891b2 !important;
+}
+
+html.light .estimator-recommendation-card {
+  background: #ffffff !important;
+  border: 2px solid #06b6d4 !important;
+  box-shadow: 0 10px 30px -5px rgba(6, 182, 212, 0.15), 0 4px 12px rgba(15, 23, 42, 0.05) !important;
+}
+html.light .estimator-recommendation-card .bg-slate-900\/70 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+html.light .estimator-recommendation-card .text-white {
+  color: #0f172a !important;
+}
+html.light .estimator-recommendation-card .text-cyan-300 {
+  color: #0284c7 !important;
+}
+html.light .estimator-recommendation-card .text-slate-300 {
+  color: #334155 !important;
+}
+
+/* ==========================================================================
+   CONTACT SECTION & FORM INPUTS
+   ========================================================================== */
+html.light .contact-form-card {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08) !important;
+}
+html.light .contact-form-card input,
+html.light .contact-form-card textarea,
+html.light .contact-form-card select {
+  background-color: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+}
+html.light .contact-form-card input::placeholder,
+html.light .contact-form-card textarea::placeholder {
+  color: #94a3b8 !important;
+}
+html.light .contact-form-card input:focus,
+html.light .contact-form-card textarea:focus,
+html.light .contact-form-card select:focus {
+  border-color: #06b6d4 !important;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15) !important;
+}
+html.light .contact-form-card button:not([type="submit"]) {
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #475569 !important;
+}
+html.light .contact-form-card button:not([type="submit"]):hover {
+  border-color: #06b6d4 !important;
+  color: #0f172a !important;
+}
+
+/* ==========================================================================
+   GEOSPATIAL RADAR & K-SIGN CANVAS
+   ========================================================================== */
 html.light #geomeridian .bg-\[\#070a12\] {
   background-color: #070a12 !important;
 }
-
-html.light #ksign .bg-\[\#090d16\] {
+html.light #geomeridian .bg-slate-950 {
   background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+html.light #geomeridian .bg-slate-900\/80 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light #ksign .bg-\[\#090d16\],
+html.light #ksign canvas {
+  background-color: #ffffff !important;
   border-color: #cbd5e1 !important;
 }
+html.light #ksign .bg-slate-950\/70 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Scoped Dark Scrollbars for Terminal & Consoles */
+.developer-terminal-box ::-webkit-scrollbar-track,
+.hero-telemetry-box ::-webkit-scrollbar-track {
+  background: #080b13 !important;
+}
+.developer-terminal-box ::-webkit-scrollbar-thumb,
+.hero-telemetry-box ::-webkit-scrollbar-thumb {
+  background: #1e293b !important;
+}
+
+/* K-Sign Interactive Card in Light Mode */
+html.light .ksign-preview-card {
+  background-color: #ffffff !important;
+  border: 2px solid rgba(6, 182, 212, 0.4) !important;
+  box-shadow: 0 10px 30px -5px rgba(6, 182, 212, 0.12), 0 4px 12px rgba(15, 23, 42, 0.04) !important;
+}
+html.light .ksign-preview-card .bg-gradient-to-r {
+  background: #f8fafc !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+html.light .ksign-preview-card .bg-slate-950 {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+html.light .ksign-preview-card .text-white {
+  color: #0f172a !important;
+}
+
+/* Geomeridian Interactive Card in Light Mode */
+html.light .geomeridian-preview-card {
+  background-color: #ffffff !important;
+  border: 2px solid rgba(139, 92, 246, 0.4) !important;
+  box-shadow: 0 10px 30px -5px rgba(139, 92, 246, 0.12), 0 4px 12px rgba(15, 23, 42, 0.04) !important;
+}
+html.light .geomeridian-preview-card .bg-gradient-to-r {
+  background: #f8fafc !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+html.light .geomeridian-preview-card .bg-slate-950 {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+html.light .geomeridian-preview-card .text-white {
+  color: #0f172a !important;
+}
+
+/* Models Section Buttons & Contrast */
+html.light #models .text-cyan-400 {
+  color: #0284c7 !important;
+  font-weight: 600;
+}
+html.light #models .text-violet-400 {
+  color: #7c3aed !important;
+  font-weight: 600;
+}
+html.light #models .text-emerald-400 {
+  color: #047857 !important;
+  font-weight: 600;
+}
+html.light #models button.bg-slate-900 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+html.light #models button.bg-slate-900:hover {
+  background-color: #e2e8f0 !important;
+}
+
+

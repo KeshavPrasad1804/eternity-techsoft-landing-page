@@ -178,7 +178,7 @@ export default function ContactSection({ initialMessage = '' }: ContactSectionPr
 
           {/* Right Form Column (7 cols) */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-3xl bg-[#0c101b] border-2 border-slate-800 shadow-2xl relative overflow-hidden">
+            <div className="contact-form-card p-8 sm:p-10 rounded-3xl bg-[#0c101b] border-2 border-slate-800 shadow-2xl relative overflow-hidden">
               
               {status === 'success' ? (
                 <div className="py-12 text-center space-y-5 animate-in fade-in zoom-in-95 duration-300">

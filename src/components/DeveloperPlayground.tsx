@@ -188,7 +188,7 @@ print(f"Containment verified: {is_inside}")`,
         </div>
 
         {/* Code Terminal Box */}
-        <div className="rounded-3xl bg-[#0c101b] border border-slate-800 shadow-2xl overflow-hidden backdrop-blur-xl grid grid-cols-1 lg:grid-cols-12">
+        <div className="developer-terminal-box rounded-3xl bg-[#0c101b] border border-slate-800 shadow-2xl overflow-hidden backdrop-blur-xl grid grid-cols-1 lg:grid-cols-12">
           
           {/* Left Column: Code Editor (7 cols) */}
           <div className="lg:col-span-7 border-b lg:border-b-0 lg:border-r border-slate-800 flex flex-col justify-between">

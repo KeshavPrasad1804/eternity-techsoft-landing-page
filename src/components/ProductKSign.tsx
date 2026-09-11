@@ -226,7 +226,7 @@ export default function ProductKSign() {
 
           {/* Interactive In-Browser Signing Simulator (6 cols) */}
           <div className="lg:col-span-6">
-            <div className="rounded-2xl bg-[#0c101b] border-2 border-cyan-500/30 shadow-2xl shadow-cyan-950/60 overflow-hidden relative">
+            <div className="ksign-preview-card rounded-2xl bg-[#0c101b] border-2 border-cyan-500/30 shadow-2xl shadow-cyan-950/60 overflow-hidden relative">
               
               {/* Header Badge */}
               <div className="p-4 bg-gradient-to-r from-slate-900 via-slate-900/90 to-cyan-950/40 border-b border-slate-800 flex items-center justify-between">

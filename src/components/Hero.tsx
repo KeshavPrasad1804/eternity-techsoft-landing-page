@@ -103,7 +103,7 @@ export default function Hero() {
 
           {/* Right Column: Live Interactive Architecture Telemetry Console */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl bg-[#0c101b]/95 border border-slate-700/70 shadow-2xl shadow-cyan-950/40 overflow-hidden backdrop-blur-xl">
+            <div className="hero-telemetry-box relative rounded-2xl bg-[#0c101b]/95 border border-slate-700/70 shadow-2xl shadow-cyan-950/40 overflow-hidden backdrop-blur-xl">
               
               {/* Terminal Window Chrome */}
               <div className="flex items-center justify-between px-4 py-3 bg-slate-900/90 border-b border-slate-800">
