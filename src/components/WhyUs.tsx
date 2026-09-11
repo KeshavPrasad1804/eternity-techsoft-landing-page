@@ -19,25 +19,25 @@ export default function WhyUs() {
       icon: <Sparkles className="w-6 h-6 text-cyan-400" />,
       title: 'Proprietary Product DNA',
       description:
-        'We don’t just consult—we build and ship our own flagship platforms (K-Sign & Geomeridian). That means our engineers bring true product-owner instincts, high-conviction UX, and scalable architecture to your project.',
+        'We don’t just consult—we build and ship our own flagship platforms (K-Sign & Geomeridian). We treat your product with true founder ownership, high-conviction UX, and scalable architecture rather than just closing hourly tickets.',
     },
     {
       icon: <Zap className="w-6 h-6 text-amber-400" />,
-      title: 'Zero-Bloat Velocity',
+      title: 'Predictable 2-Week Sprints & Zero Debt',
       description:
-        'We ruthlessly optimize for developer productivity and low runtime overhead. Fast iteration cycles backed by automated CI/CD allow our partners to beat competitors to market without accruing crippling technical debt.',
+        'You receive tested, working software deployed to staging every two weeks. No endless delays, no surprise invoices, and no messy spaghetti code that requires an expensive rewrite later.',
     },
     {
       icon: <Lock className="w-6 h-6 text-emerald-400" />,
-      title: 'Cryptographic & Zero-Trust Security',
+      title: '100% IP Ownership & Mutual NDAs',
       description:
-        'Security isn’t an afterthought tacked on at the end. We architect systems with defense-in-depth, cryptographic verification, role-based access control, and strict compliance alignment from sprint zero.',
+        'You own every line of code, design file, and cloud credential from day one. We sign mutual enterprise NDAs before reviewing your specs, and provide clean automated CI/CD handovers with complete documentation.',
     },
     {
       icon: <HeartHandshake className="w-6 h-6 text-violet-400" />,
-      title: 'Direct Senior Access',
+      title: 'Direct Access to Principal Engineers',
       description:
-        'You work directly with principal architects and seasoned staff engineers who own the problem. No junior handoffs, no bureaucratic layers, and no game of telephone between business and code.',
+        'You collaborate directly with principal architects and seasoned staff engineers who own the problem end-to-end. No junior developer handoffs, no layers of account managers, and no game of telephone.',
     },
   ];
 

@@ -217,12 +217,10 @@ export default function ProductGeomeridian() {
               Flagship Product Lab 02
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
-              Geomeridian: <span className="text-gradient-violet">Spatial Intelligence & GIS Engine</span>
+              Geomeridian: <span className="text-gradient-violet">Live Maps & Fleet Intelligence</span> That Never Freeze
             </h2>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-              We are building <strong className="text-violet-300">Geomeridian</strong> to solve enterprise geospatial scalability. 
-              Process massive vector datasets, stream real-time drone and fleet telemetry, orchestrate dynamic geofences, 
-              and render millions of spatial coordinates with sub-meter precision.
+              Track tens of thousands of moving delivery trucks, drones, and field assets in real time without lag. <strong className="text-violet-300">Geomeridian</strong> renders massive spatial maps at 60 frames per second and triggers instant geofence alerts the millisecond a boundary is crossed.
             </p>
           </div>
 
@@ -368,11 +366,11 @@ export default function ProductGeomeridian() {
             <div className="p-6 rounded-2xl bg-[#0c101b]/80 border border-slate-800 shadow-xl backdrop-blur-md space-y-4">
               <h3 className="text-lg font-bold text-white flex items-center gap-2">
                 <Globe2 className="w-5 h-5 text-violet-400" />
-                Unlocking Enterprise Geospatial Advantage
+                Why Operations Teams Choose Geomeridian
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Legacy GIS software is notoriously sluggish, desktop-locked, and incapable of processing real-time streaming coordinates. 
-                Geomeridian is engineered from the ground up on modern WebGL/WebGPU, distributed spatial indexes, and cloud-native message brokers.
+                Legacy GIS mapping software is notoriously sluggish, bound to slow desktop apps, and crashes when fed real-time sensor streams. 
+                Geomeridian runs directly in any web browser at 60 FPS, turning raw GPS telemetry into instant operational clarity.
               </p>
 
               {/* Metrics Bar */}

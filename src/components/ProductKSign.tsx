@@ -143,18 +143,16 @@ export default function ProductKSign() {
               Flagship Product Lab 01
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
-              K-Sign: <span className="text-gradient-cyan">Cryptographic Trust & E-Sign Suite</span>
+              K-Sign: <span className="text-gradient-cyan">Tamper-Proof Digital Contracts</span> Without the DocuSign Tax
             </h2>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-              We are actively developing <strong className="text-cyan-300">K-Sign</strong> to redefine digital agreement security. 
-              Eliminate paper friction with tamper-evident cryptographic hashes, legally binding e-Sign compliance, 
-              and multi-party signer automation.
+              Eliminate expensive per-envelope fees and vendor lock-in. <strong className="text-cyan-300">K-Sign</strong> is our flagship digital trust suite—delivering legally binding, fraud-proof contracts with instant cryptographic seals that you can deploy in your own cloud.
             </p>
           </div>
 
           <div className="flex flex-wrap gap-2 md:justify-end">
             <span className="px-3 py-1 text-xs font-mono bg-slate-900 border border-slate-700 text-slate-300 rounded-lg">
-              E-SIGN & eIDAS Standard
+              E-SIGN & eIDAS Compliant
             </span>
             <span className="px-3 py-1 text-xs font-mono bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 rounded-lg">
               In Active Development
@@ -170,11 +168,11 @@ export default function ProductKSign() {
             <div className="p-6 rounded-2xl bg-[#0c101b]/80 border border-slate-800 shadow-xl backdrop-blur-md space-y-4">
               <h3 className="text-lg font-bold text-white flex items-center gap-2">
                 <Lock className="w-5 h-5 text-cyan-400" />
-                Why K-Sign Replaces Conventional E-Signature Tools
+                Why Businesses Switch from Legacy E-Signature Tools
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Most electronic signature tools rely on simple image pastes and centralized database rows. 
-                K-Sign binds each stroke, timestamp, and identity to cryptographic hashes—making document fraud mathematically impossible to conceal.
+                Legacy tools charge you every time a customer signs an agreement and lock your legal documents in their cloud. 
+                K-Sign delivers flat predictable pricing, private self-hosting options, and mathematically immutable audit trails that can never be modified or forged after signing.
               </p>
 
               {/* Metric Callouts */}

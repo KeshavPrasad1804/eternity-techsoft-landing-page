@@ -50,12 +50,11 @@ export default function Services() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
-            Engineering Precision Across the Entire <span className="text-gradient-brand">Digital Lifecycle</span>
+            High-Velocity Engineering for <span className="text-gradient-brand">Founders & Enterprise Teams</span>
           </h2>
 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-            Beyond building our own proprietary platforms, we act as the high-velocity engineering partner 
-            for forward-looking enterprises—shipping robust, scalable, and resilient software architectures.
+            We act as your dedicated technical partner to design, build, and ship production-ready software in 2-week sprints—with 100% code ownership, zero technical debt, and direct access to senior architects.
           </p>
         </div>
 
@@ -127,17 +126,17 @@ export default function Services() {
         <div className="mt-14 p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-900/90 to-cyan-950/40 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center md:text-left">
             <h3 className="text-xl font-bold text-white">
-              Have a complex software challenge or custom product vision?
+              Have a product vision or an existing codebase that's slowing you down?
             </h3>
             <p className="text-sm text-slate-400">
-              Our principal architects are ready to evaluate your requirements and assemble an agile engineering team.
+              Talk directly with a principal architect—no sales reps, no fluff. We'll evaluate feasibility and map out an actionable sprint plan.
             </p>
           </div>
           <a
             href="#contact"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm text-slate-950 bg-cyan-400 hover:bg-cyan-300 shadow-lg shadow-cyan-500/20 transition-all duration-200 shrink-0"
           >
-            <span>Consult an Architect</span>
+            <span>Talk with an Architect</span>
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

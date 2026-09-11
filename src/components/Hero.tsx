@@ -57,17 +57,32 @@ export default function Hero() {
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
-              Architecting High-Impact{' '}
-              <span className="text-gradient-cyan">Software Services</span> &{' '}
-              <span className="text-gradient-violet">Breakthrough Products</span>
+              Software That Scales.{' '}
+              <span className="text-gradient-cyan">Engineered to Never Break</span>{' '}
+              under Pressure.
             </h1>
 
             {/* Subhead with explicit mentions */}
             <p className="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl">
-              <strong className="text-white font-semibold">Eternity Techsoft</strong> is a premier software engineering company. 
-              We partner with global businesses to engineer high-velocity digital solutions while actively developing 
-              our flagship proprietary platforms: <span className="text-cyan-300 underline underline-offset-4 decoration-cyan-500/40 font-medium">K-Sign</span> (Cryptographic Trust) and <span className="text-violet-300 underline underline-offset-4 decoration-violet-500/40 font-medium">Geomeridian</span> (Spatial Intelligence).
+              We partner with founders and enterprise leaders to take ambitious software from idea to production in rapid 2-week sprints. 
+              Built with the same battle-tested engineering behind our own flagship platforms: <span className="text-cyan-300 underline underline-offset-4 decoration-cyan-500/40 font-medium">K-Sign</span> (tamper-proof digital contracts) and <span className="text-violet-300 underline underline-offset-4 decoration-violet-500/40 font-medium">Geomeridian</span> (real-time live maps & fleet tracking).
             </p>
+
+            {/* Founder Reassurance & Trust Badges */}
+            <div className="flex flex-wrap items-center gap-2.5 pt-1 text-xs font-mono text-slate-300">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                <span>100% IP Ownership from Day 1</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Mutual NDA Protected</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                <Cpu className="w-3.5 h-3.5 text-violet-400" />
+                <span>Zero Junior Dev Handoffs</span>
+              </div>
+            </div>
 
             {/* CTA Group */}
             <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5 pt-2">

@@ -15,48 +15,48 @@ import {
 export default function CaseStudies() {
   const caseStudies = [
     {
-      badge: 'FINTECH & LEDGER INFRASTRUCTURE',
-      title: 'High-Velocity Settlement Engine with Sub-80ms P99 Latency',
+      badge: 'FINTECH & PAYMENT INFRASTRUCTURE',
+      title: 'Zero Failed Payments Across $12M+ Daily Transaction Volume',
       metrics: [
         { label: 'P99 Latency', value: '< 78ms' },
         { label: 'Transaction Uptime', value: '99.999%' },
         { label: 'Daily Volume', value: '$12M+' },
       ],
       challenge:
-        'A high-growth payments platform was struggling with database locks and race conditions during market volatility, leading to settlement bottlenecks and failed transfers.',
+        'A high-volume payments platform was freezing during customer traffic spikes, causing delayed orders, duplicate chargebacks, and lost revenue.',
       solution:
-        'Architected an event-driven CQRS ledger using Go microservices, Apache Kafka event streams, and transactional Redis caching with idempotent distributed settlement logic.',
-      stack: ['Go (Golang)', 'Kafka', 'PostgreSQL', 'Redis', 'Docker'],
+        'Rebuilt their transaction engine with idempotent Go microservices and event queues. Even when 10,000 customers check out simultaneously, payments clear in under 80ms with zero duplicate charges.',
+      stack: ['Go (Golang)', 'Kafka CQRS', 'PostgreSQL', 'Redis', 'Docker'],
       accent: 'cyan',
     },
     {
       badge: 'CLOUD MIGRATION & SRE',
-      title: 'Enterprise Kubernetes Migration & 42% Cloud Cost Reduction',
+      title: '42% Monthly Cloud Bill Reduction with Zero-Downtime Scaling',
       metrics: [
         { label: 'Cost Reduction', value: '42%' },
         { label: 'Deployment Downtime', value: '0 sec' },
         { label: 'Auto-scale Speed', value: '< 45s' },
       ],
       challenge:
-        'A legacy B2B SaaS platform was bound to manually provisioned monolithic VMs, causing frequent downtime during traffic spikes and runaway infrastructure costs.',
+        'A growing B2B SaaS company had runaway cloud hosting bills and their app crashed whenever featured on major industry newsletters or marketing campaigns.',
       solution:
-        'Deconstructed the monolith into containerized workloads orchestrated on Kubernetes (EKS) with Terraform Infrastructure-as-Code, spot-instance auto-scaling, and blue/green GitOps.',
-      stack: ['Kubernetes', 'Terraform', 'AWS EKS', 'ArgoCD', 'Prometheus'],
+        'Containerized their infrastructure with Kubernetes auto-scaling. Slashed their monthly cloud bill by 42% while enabling servers to spin up automatically in under 45 seconds to absorb viral traffic.',
+      stack: ['Kubernetes (EKS)', 'Terraform IaC', 'AWS Spot Pools', 'ArgoCD', 'Prometheus'],
       accent: 'emerald',
     },
     {
       badge: 'SPATIAL TELEMETRY & IOT',
-      title: 'Real-Time IoT Fleet Stream Ingesting 50k+ Events Per Second',
+      title: 'Live IoT Fleet Map Tracking 50,000+ Assets with Zero Lag',
       metrics: [
         { label: 'Ingestion Rate', value: '50k+ /s' },
         { label: 'UI Frame Rate', value: '60 FPS' },
         { label: 'Geofence SLA', value: '< 150ms' },
       ],
       challenge:
-        'An industrial logistics fleet required live geofence verification across 15,000 active assets, but their existing GIS stack suffered from severe query latency and UI freezing.',
+        'An industrial logistics company tracking 15,000 active delivery vehicles suffered from frozen browser tabs, lagging maps, and delayed delivery status updates.',
       solution:
-        'Implemented a streaming ingestion pipeline powered by ClickHouse and PostGIS with spatial H3 indexing and a WebGPU vector renderer for butter-smooth visualization.',
-      stack: ['Python', 'ClickHouse', 'PostGIS', 'WebSockets', 'WebGPU'],
+        'Engineered a real-time streaming pipeline and custom WebGPU vector map. Smoothly displays 50,000+ moving vehicles at 60 FPS, triggering instant geofence alerts in under 150 milliseconds.',
+      stack: ['Python', 'ClickHouse', 'PostGIS', 'WebSockets', 'WebGPU Vector'],
       accent: 'violet',
     },
   ];
@@ -76,12 +76,11 @@ export default function CaseStudies() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
-            Architectural Case Studies & <span className="text-gradient-cyan">Production Results</span>
+            Real Engineering Stories & <span className="text-gradient-cyan">Measurable Results</span>
           </h2>
 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-            We measure our engineering by measurable business metrics: latency drops, infrastructure savings, 
-            and resilient architectures that thrive under production stress.
+            We don't talk in vague promises. Here is how our software engineering solved critical business bottlenecks, reduced infrastructure overhead, and scaled without breaking.
           </p>
         </div>
 
