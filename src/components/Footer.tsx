@@ -52,8 +52,7 @@ export default function Footer() {
             </div>
 
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              Architecting mission-critical software services while incubating breakthrough proprietary platforms. 
-              Creators of <strong className="text-cyan-300">K-Sign</strong> (Cryptographic Trust), <strong className="text-emerald-300">K-Code</strong> (Autonomous AI Harness), and <strong className="text-violet-300">Geomeridian</strong> (Spatial Intelligence).
+              Independent software engineering studio architecting robust digital systems and incubating proprietary deep-tech platforms: <strong className="text-cyan-300">K-Sign</strong> (Cryptographic Trust), <strong className="text-emerald-300">K-Code</strong> (Autonomous AI Harness), and <strong className="text-violet-300">Geomeridian</strong> (Spatial Intelligence).
             </p>
 
             {/* Social Links */}
@@ -96,9 +95,9 @@ export default function Footer() {
             </div>
 
             <div className="pt-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-emerald-400">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>ALL LAB & CORE SYSTEMS OPERATIONAL</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-400">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                <span>LAB & DIGITAL SYSTEMS ACTIVE</span>
               </div>
             </div>
           </div>

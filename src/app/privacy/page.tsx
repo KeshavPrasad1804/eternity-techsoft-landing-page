@@ -65,7 +65,7 @@ export default function PrivacyPage() {
             </div>
             <ul className="space-y-3 list-disc pl-5 text-slate-300">
               <li>
-                <strong className="text-white">Direct Communications:</strong> When you submit inquiry forms or engage our discovery team, we collect your name, business email address, organization name, and technical project specifications.
+                <strong className="text-white">Direct Communications:</strong> When you submit inquiry forms or request an architectural discovery, we collect your name, business email address, organization name, and technical project specifications.
               </li>
               <li>
                 <strong className="text-white">Proprietary Platforms (K-Sign & Geomeridian):</strong> For users engaging our private preview or API tiers, telemetry logs (such as request latencies, IP addresses for rate limiting, and cryptographic audit hash records) are collected solely to ensure platform security and SLA uptime.

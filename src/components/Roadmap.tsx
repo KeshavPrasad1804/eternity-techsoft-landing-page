@@ -18,7 +18,7 @@ export default function Roadmap() {
   const kSignMilestones = [
     {
       quarter: 'Phase 1: Foundation',
-      status: 'Shipped',
+      status: 'Validated',
       title: 'Cryptographic Engine & Dual-Mode Canvas',
       items: [
         'Browser-native Web Crypto SHA-256 and Ed25519 hashing core',
@@ -54,7 +54,7 @@ export default function Roadmap() {
   const kCodeMilestones = [
     {
       quarter: 'M0 & M1: Foundation & Local Runner',
-      status: 'Shipped',
+      status: 'Validated',
       title: 'Isolated Worktrees & Baseline Evidence',
       items: [
         'Deterministic git worktree sandbox isolation with clean working tree guarantee',
@@ -90,7 +90,7 @@ export default function Roadmap() {
   const geoMilestones = [
     {
       quarter: 'Phase 1: Foundation',
-      status: 'Shipped',
+      status: 'Validated',
       title: 'WebGPU Spatial Canvas & Radar Telemetry',
       items: [
         'Hardware-accelerated 60 FPS vector tile rendering engine',
@@ -206,14 +206,14 @@ export default function Roadmap() {
                   </span>
                   <span
                     className={`text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${
-                      milestone.status === 'Shipped'
+                      milestone.status === 'Validated'
                         ? 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30'
                         : milestone.status === 'In Progress'
                         ? 'bg-cyan-500/10 text-cyan-300 border-cyan-500/30 animate-pulse'
                         : 'bg-purple-500/10 text-purple-300 border-purple-500/30'
                     }`}
                   >
-                    {milestone.status === 'Shipped' && '✓ SHIPPED'}
+                    {milestone.status === 'Validated' && '✓ LAB ALPHA VALIDATED'}
                     {milestone.status === 'In Progress' && '● IN ACTIVE SPRINT'}
                     {milestone.status === 'Planned' && '○ UPCOMING'}
                   </span>

@@ -98,7 +98,7 @@ export default function ContactSection({ initialMessage = '' }: ContactSectionPr
 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
             Whether you need mission-critical software engineering services or want early access 
-            to <strong className="text-cyan-300">K-Sign</strong> and <strong className="text-violet-300">Geomeridian</strong>, our technical team is ready.
+            to <strong className="text-cyan-300">K-Sign</strong> and <strong className="text-violet-300">Geomeridian</strong>, I am ready to review your project brief.
           </p>
         </div>
 
@@ -109,9 +109,9 @@ export default function ContactSection({ initialMessage = '' }: ContactSectionPr
             <div className="p-8 rounded-3xl bg-[#0c101b]/90 border border-slate-800 shadow-xl backdrop-blur-xl space-y-6">
               
               <div className="space-y-2">
-                <h3 className="text-xl font-bold text-white">Direct Access to Engineers</h3>
+                <h3 className="text-xl font-bold text-white">Direct Access to the Principal Architect</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  We don’t use aggressive sales reps. Your inquiry is reviewed directly by our senior engineering leads and architects.
+                  No aggressive sales reps, no account managers, and no junior developer handoffs. Your inquiry is reviewed directly by the founder and lead architect.
                 </p>
               </div>
 
@@ -181,7 +181,7 @@ export default function ContactSection({ initialMessage = '' }: ContactSectionPr
                   <span>Direct Architectural Discovery</span>
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed">
-                  Prefer an introductory sync? Schedule a focused 15-minute discovery call with our principal engineering team.
+                  Prefer an introductory sync? Schedule a focused 15-minute discovery call directly with the founder & lead architect.
                 </p>
                 <a
                   href={`mailto:${COMPANY_INFO.email}?subject=Schedule%2015-Min%20Architectural%20Discovery`}
@@ -207,7 +207,7 @@ export default function ContactSection({ initialMessage = '' }: ContactSectionPr
                   <div className="space-y-2">
                     <h3 className="text-2xl font-bold text-white">Inquiry Received Successfully</h3>
                     <p className="text-sm text-slate-300 max-w-md mx-auto">
-                      Thank you for reaching out to Eternity Techsoft. Our senior engineering team has received your brief and will respond within 24 hours.
+                      Thank you for reaching out to Eternity Techsoft. Your project brief has been received directly and I will respond within 24 hours.
                     </p>
                   </div>
                   <div className="inline-block px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 font-mono text-xs text-slate-400">

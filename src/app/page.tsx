@@ -9,7 +9,6 @@ import ProductKCode from '@/components/ProductKCode';
 import ProductComparison from '@/components/ProductComparison';
 import DeveloperPlayground from '@/components/DeveloperPlayground';
 import Services from '@/components/Services';
-import CaseStudies from '@/components/CaseStudies';
 import EngagementModels from '@/components/EngagementModels';
 import Process from '@/components/Process';
 import TechStack from '@/components/TechStack';
@@ -28,13 +27,13 @@ export default function Home() {
 
   const handleScopeSelected = (summary: string) => {
     setInquiryInitialMessage(
-      `Hello Eternity Techsoft team,\n\nI configured the following scope on your project estimator:\n${summary}\n\nWe would like to discuss feasibility, sprint kick-off, and technical architecture with your team.`
+      `Hello Eternity Techsoft,\n\nI configured the following scope on your project estimator:\n${summary}\n\nI would like to discuss feasibility, sprint kick-off, and technical architecture directly with you.`
     );
   };
 
   const handleModelSelected = (modelTitle: string) => {
     setInquiryInitialMessage(
-      `Hello Eternity Techsoft team,\n\nI am interested in engaging under your [${modelTitle}] framework.\n\nWe have upcoming software requirements and would like to schedule an introductory architectural discussion.`
+      `Hello Eternity Techsoft,\n\nI am interested in engaging under your [${modelTitle}] framework.\n\nI have upcoming software requirements and would like to schedule an introductory architectural discussion.`
     );
   };
 
@@ -117,10 +116,7 @@ export default function Home() {
         {/* 7. Software Services Bento Grid */}
         <Services />
 
-        {/* 8. Architectural Case Studies / Proven Production Impact */}
-        <CaseStudies />
-
-        {/* 9. Client Engagement & Partnership Models */}
+        {/* 8. Client Engagement & Partnership Models */}
         <EngagementModels onSelectModel={handleModelSelected} />
 
         {/* 9. Engineering Methodology / 5-Stage Blueprint */}

@@ -12,7 +12,7 @@ export const FAQS: FAQItem[] = [
   {
     question: 'Can K-Sign, K-Code, and Geomeridian be self-hosted in our own private cloud?',
     answer:
-      'Yes. In addition to our multi-tenant SaaS cloud, K-Sign, K-Code, and Geomeridian are packaged into containerized Docker and Helm/Kubernetes appliances. You can deploy them directly within your air-gapped AWS, Google Cloud, Azure, or on-premise infrastructure to satisfy strict banking, medical, or government data residency mandates.',
+      'All proprietary platforms (K-Sign, K-Code, Geomeridian) are architected from day one for containerized Docker and Kubernetes deployment. As they are currently in active laboratory development, I am piloting containerized prototypes with select enterprise design partners. Contact me directly for private alpha access.',
   },
   {
     question: 'How do you protect confidentiality and sensitive business logic?',
@@ -20,9 +20,9 @@ export const FAQS: FAQItem[] = [
       'We execute mutual enterprise Non-Disclosure Agreements (NDAs) before discussing project specifics. All code is stored in enterprise-grade private repositories, and our engineering environments adhere to strict zero-trust security access controls, encrypted keystores, and compartmentalized databases.',
   },
   {
-    question: 'How quickly can an Eternity Techsoft engineering pod spin up?',
+    question: 'Who will actually work on my project? Are there junior developer handoffs?',
     answer:
-      'Typically within 5 to 10 business days. Following initial architectural discovery and blueprint alignment, our principal architects assign vetted staff engineers with proven domain mastery in your target stack, allowing sprint delivery to kick off immediately.',
+      'Zero junior handoffs. Eternity Techsoft is a founder-led engineering studio. When you engage Eternity Techsoft, you work directly 1-on-1 with me—an experienced principal full-stack architect who personally designs the architecture, writes the code, and manages production deployments. There are no account managers, no layers of bureaucracy, and no outsourced junior developers learning on your dime.',
   },
   {
     question: 'What happens after our software is deployed to production?',
@@ -32,7 +32,7 @@ export const FAQS: FAQItem[] = [
   {
     question: 'How do you prevent the technical debt common in agency work?',
     answer:
-      'We treat client codebases with the exact same engineering rigor as our proprietary flagship platforms. That means 100% TypeScript type-safety, automated linting pipelines, strict unit and integration testing gates, modular microservices architecture, and clean decoupled components.',
+      'I treat client codebases with the exact same engineering rigor as my proprietary lab platforms. That means 100% TypeScript type-safety, automated linting pipelines, strict unit and integration testing gates, modular microservices architecture, and clean decoupled components.',
   },
   {
     question: 'How does K-Code differ from mainstream AI coding tools like Cursor or Devin?',

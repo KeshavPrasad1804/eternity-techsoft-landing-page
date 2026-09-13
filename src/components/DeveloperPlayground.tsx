@@ -21,12 +21,13 @@ export default function DeveloperPlayground() {
     ksign: {
       lang: 'TypeScript',
       fileName: 'sign-contract.ts',
-      install: 'npm install @eternity/ksign-sdk',
-      code: `import { KSignClient } from '@eternity/ksign-sdk';
+      install: '# Architecture Specification (Alpha Preview — Inquire for Private SDK Access)',
+      code: `// K-Sign Embedded SDK Specification (Alpha Preview)
+import { KSignClient } from '@eternity/ksign-sdk';
 
 const ksign = new KSignClient({
   apiKey: process.env.ETERNITY_KSIGN_API_KEY,
-  environment: 'production'
+  environment: 'sandbox'
 });
 
 // Create and cryptographically seal an agreement
@@ -35,7 +36,7 @@ const agreement = await ksign.documents.createAndSign({
   fileUrl: 'https://cdn.enterprise.com/contracts/msa-2026.pdf',
   signers: [
     { email: 'elena@enterprise.com', role: 'Signer', sequence: 1 },
-    { email: 'legal@eternitytechsoft.com', role: 'CounterSigner', sequence: 2 }
+    { email: 'founder@eternitytechsoft.com', role: 'CounterSigner', sequence: 2 }
   ],
   cryptography: {
     algorithm: 'Ed25519-SHA256',
@@ -48,7 +49,7 @@ console.log('Contract Sealed:', agreement.sha256Hash);`,
   "status": "SEALED",
   "documentId": "ksign_doc_8941bc87",
   "sha256Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-  "auditCertificateUrl": "https://vault.eternitytechsoft.com/cert/8941bc87.pdf",
+  "auditCertificateUrl": "https://api.eternitytechsoft.com/preview/cert/8941bc87.pdf",
   "signers": 2,
   "executionTimeMs": 48.2
 }`,
@@ -56,7 +57,7 @@ console.log('Contract Sealed:', agreement.sha256Hash);`,
     kcode: {
       lang: 'CLI / Shell',
       fileName: 'kcode-verify.sh',
-      install: 'npx k-code@latest run --help',
+      install: '# CLI Harness Specification (Internal Lab Testing)',
       code: `# Run autonomous repair in an isolated Git worktree
 npx k-code run \\
   --target ./services/order-settlement \\
@@ -85,7 +86,7 @@ npx k-code run \\
     geomeridian: {
       lang: 'Python',
       fileName: 'spatial_stream.py',
-      install: 'pip install geomeridian-engine',
+      install: '# Python Engine Specification (Alpha Preview — Inquire for Private Access)',
       code: `from geomeridian import SpatialEngine, GeofencePolygon
 
 engine = SpatialEngine(api_key="geo_live_891048201948")
@@ -170,8 +171,8 @@ print(f"Containment verified: {is_inside}")`,
           </h2>
 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-            Clean APIs, type-safe SDKs, and zero-compromise documentation. 
-            Integrate our platforms into your tech stack in minutes, not months.
+            Clean APIs, type-safe SDK architectures, and zero-compromise system design. 
+            Explore the developer specifications for our proprietary laboratory platforms below.
           </p>
 
           {/* Selector Tabs */}

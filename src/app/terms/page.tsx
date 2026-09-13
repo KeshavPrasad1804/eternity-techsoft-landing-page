@@ -64,7 +64,7 @@ export default function TermsPage() {
               <h2>2. Mutual Non-Disclosure & Confidentiality</h2>
             </div>
             <p>
-              We enforce strict confidentiality covenants. Prior to analyzing your proprietary data or technical specifications, our team executes mutual enterprise Non-Disclosure Agreements (NDAs). All developer workstations employ hardware-level encryption, multi-factor authentication, and zero-trust compartmentalization.
+              We enforce strict confidentiality covenants. Prior to analyzing your proprietary data or technical specifications, I execute mutual enterprise Non-Disclosure Agreements (NDAs). All developer workstations employ hardware-level encryption, multi-factor authentication, and zero-trust compartmentalization.
             </p>
           </section>
 

@@ -24,44 +24,35 @@ export default function ProjectEstimator({ onSelectScope }: ProjectEstimatorProp
 
   // Recommendation engine logic
   const getRecommendation = () => {
-    let team = '1 Principal Architect, 2 Full-Stack Engineers, 1 QA Engineer';
     let stack = 'Next.js 15, TypeScript, Node.js/Go, PostgreSQL, Redis, Vercel';
     let sprints = '4 - 6 Agile Sprints (8-12 weeks)';
     let focus = 'High-availability architecture, strict type-safety, and seamless user experience.';
 
     if (projectType === 'cloud') {
-      team = '1 Cloud/DevOps Architect, 1 Security Specialist, 1 Systems Engineer';
       stack = 'Kubernetes, Terraform, AWS/GCP, Docker, GitHub Actions, Vault';
       sprints = '3 - 5 Infrastructure Sprints';
       focus = 'Zero-downtime CI/CD, auto-scaling, disaster recovery, and infrastructure as code.';
     } else if (projectType === 'ai') {
-      team = '1 AI/ML Systems Lead, 1 Data Engineer, 1 Full-Stack Engineer';
       stack = 'Python, FastAPI, LangChain/LlamaIndex, Vector DB (Pinecone), OpenAI/Gemini';
       sprints = '4 - 6 Innovation Sprints';
       focus = 'Contextual retrieval accuracy (RAG), sub-second inference, and secure document embeddings.';
     } else if (projectType === 'mobile') {
-      team = '1 Mobile Tech Lead, 2 Flutter/React Native Engineers, 1 Backend Specialist';
       stack = 'Flutter / React Native, TypeScript, GraphQL, SQLite, Push Telemetry';
       sprints = '5 - 7 Cross-Platform Sprints';
       focus = 'Fluid 120Hz gesture interactions, offline-first data sync, and multi-store release automation.';
     } else if (projectType === 'product') {
-      team = '1 Product Architect, 3 Full-Stack Engineers, 1 DevOps Engineer, 1 Designer';
       stack = 'Next.js, Go/Node.js, PostgreSQL/PostGIS, WebCrypto, Redis, Microservices';
       sprints = '6+ Strategic Co-Build Sprints';
       focus = 'Proprietary IP development matching the engineering rigor of K-Sign and Geomeridian.';
     }
 
-    if (timeline === 'urgent') {
-      team = team + ' (Accelerated Pod)';
-    }
-
-    return { team, stack, sprints, focus };
+    return { stack, sprints, focus };
   };
 
   const recommendation = getRecommendation();
 
   const handleApplyToContact = () => {
-    const summary = `Selected Project Scope: [Type: ${projectType.toUpperCase()} | Timeline: ${timeline.toUpperCase()} | Scale: ${scale.toUpperCase()}]. Team: ${recommendation.team}.`;
+    const summary = `Selected Project Scope: [Type: ${projectType.toUpperCase()} | Timeline: ${timeline.toUpperCase()} | Scale: ${scale.toUpperCase()}]. Estimated Cadence: ${recommendation.sprints}.`;
     if (onSelectScope) {
       onSelectScope(summary);
     }
@@ -91,7 +82,7 @@ export default function ProjectEstimator({ onSelectScope }: ProjectEstimatorProp
 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
             Select your project parameters below to get instant architectural recommendations, 
-            recommended team composition, and delivery cadence.
+            targeted tech stack blueprints, and sprint delivery cadence.
           </p>
         </div>
 
@@ -112,21 +103,21 @@ export default function ProjectEstimator({ onSelectScope }: ProjectEstimatorProp
                   { id: 'cloud', label: 'Cloud Architecture & DevOps', icon: <Zap className="w-4 h-4" /> },
                   { id: 'ai', label: 'AI & Intelligent Automation', icon: <Cpu className="w-4 h-4" /> },
                   { id: 'mobile', label: 'Cross-Platform Mobile App', icon: <Users className="w-4 h-4" /> },
-                  { id: 'product', label: 'Proprietary Product Co-Build', icon: <Sparkles className="w-4 h-4" /> },
+                  { id: 'product', label: 'Proprietary IP / Deep-Tech Co-Build', icon: <Sparkles className="w-4 h-4" /> },
                 ].map((item) => (
                   <button
                     key={item.id}
                     onClick={() => setProjectType(item.id)}
-                    className={`flex items-center gap-3 p-3.5 rounded-xl text-left text-sm font-semibold transition-all duration-200 border ${
+                    className={`p-3.5 rounded-xl border text-left transition-all flex items-center gap-3 ${
                       projectType === item.id
-                        ? 'bg-cyan-500/10 border-cyan-400 text-white shadow-md shadow-cyan-500/10'
-                        : 'bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200'
+                        ? 'bg-cyan-500/10 border-cyan-500/50 text-cyan-300 shadow-lg shadow-cyan-950/40'
+                        : 'bg-slate-900/60 border-slate-800 text-slate-300 hover:border-slate-700'
                     }`}
                   >
-                    <span className={projectType === item.id ? 'text-cyan-400' : 'text-slate-500'}>
+                    <div className={projectType === item.id ? 'text-cyan-400' : 'text-slate-500'}>
                       {item.icon}
-                    </span>
-                    <span>{item.label}</span>
+                    </div>
+                    <span className="text-xs font-semibold">{item.label}</span>
                   </button>
                 ))}
               </div>
@@ -135,25 +126,25 @@ export default function ProjectEstimator({ onSelectScope }: ProjectEstimatorProp
             {/* 2. Timeline Selector */}
             <div className="space-y-3">
               <label className="block text-xs font-mono uppercase tracking-wider text-slate-400">
-                2. Target Timeline
+                2. Delivery Timeline & Urgency
               </label>
-              <div className="grid grid-cols-3 gap-2.5">
+              <div className="grid grid-cols-3 gap-3">
                 {[
-                  { id: 'urgent', label: 'Accelerated', sub: '4 - 6 Weeks' },
-                  { id: 'standard', label: 'Standard', sub: '2 - 4 Months' },
-                  { id: 'enterprise', label: 'Multi-Phase', sub: '6+ Months' },
+                  { id: 'standard', label: 'Standard', desc: 'Continuous bi-weekly sprints' },
+                  { id: 'accelerated', label: 'Priority Sprint', desc: 'Fast-track architecture' },
+                  { id: 'urgent', label: 'Critical Launch', desc: 'Rapid 4-week turnaround' },
                 ].map((item) => (
                   <button
                     key={item.id}
                     onClick={() => setTimeline(item.id)}
-                    className={`p-3 rounded-xl text-center text-xs font-semibold transition-all border ${
+                    className={`p-3 rounded-xl border text-left transition-all ${
                       timeline === item.id
-                        ? 'bg-cyan-500/10 border-cyan-400 text-white shadow-md shadow-cyan-500/10'
-                        : 'bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200'
+                        ? 'bg-cyan-500/10 border-cyan-500/50 text-cyan-300'
+                        : 'bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700'
                     }`}
                   >
                     <div className="text-white font-bold">{item.label}</div>
-                    <div className="text-[11px] text-cyan-400 font-mono mt-0.5">{item.sub}</div>
+                    <div className="text-[10px] text-slate-500 mt-0.5">{item.desc}</div>
                   </button>
                 ))}
               </div>
@@ -162,21 +153,21 @@ export default function ProjectEstimator({ onSelectScope }: ProjectEstimatorProp
             {/* 3. Scale / Complexity Selector */}
             <div className="space-y-3">
               <label className="block text-xs font-mono uppercase tracking-wider text-slate-400">
-                3. Deployment Scale
+                3. System Scale & Load Expectations
               </label>
-              <div className="grid grid-cols-3 gap-2.5">
+              <div className="grid grid-cols-3 gap-3">
                 {[
-                  { id: 'mvp', label: 'Early-Stage / MVP', desc: 'Proof of Market' },
-                  { id: 'growth', label: 'Growth Scale', desc: 'Active Revenue' },
-                  { id: 'enterprise', label: 'Enterprise Global', desc: 'High Concurrency' },
+                  { id: 'mvp', label: 'Prototype / MVP', desc: 'Validate core thesis' },
+                  { id: 'growth', label: 'Growth Scale', desc: 'Production-ready scaling' },
+                  { id: 'enterprise', label: 'Enterprise Rigor', desc: 'High-availability & compliance' },
                 ].map((item) => (
                   <button
                     key={item.id}
                     onClick={() => setScale(item.id)}
-                    className={`p-3 rounded-xl text-center text-xs font-semibold transition-all border ${
+                    className={`p-3 rounded-xl border text-left transition-all ${
                       scale === item.id
-                        ? 'bg-cyan-500/10 border-cyan-400 text-white shadow-md shadow-cyan-500/10'
-                        : 'bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200'
+                        ? 'bg-cyan-500/10 border-cyan-500/50 text-cyan-300'
+                        : 'bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700'
                     }`}
                   >
                     <div className="text-white font-bold">{item.label}</div>
@@ -197,17 +188,17 @@ export default function ProjectEstimator({ onSelectScope }: ProjectEstimatorProp
                 <h3 className="text-base font-bold text-white">Recommended Architecture</h3>
               </div>
               <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">
-                AGILE POD
+                BLUEPRINT ESTIMATE
               </span>
             </div>
 
             <div className="space-y-4 text-xs">
               <div className="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800 space-y-1">
                 <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">
-                  Recommended Team Pod:
+                  Estimated Cadence:
                 </span>
-                <span className="text-sm font-semibold text-white leading-snug block">
-                  {recommendation.team}
+                <span className="text-sm font-semibold text-white block">
+                  {recommendation.sprints}
                 </span>
               </div>
 
@@ -222,19 +213,19 @@ export default function ProjectEstimator({ onSelectScope }: ProjectEstimatorProp
 
               <div className="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800 space-y-1">
                 <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">
-                  Estimated Cadence:
-                </span>
-                <span className="text-sm font-semibold text-white block">
-                  {recommendation.sprints}
-                </span>
-              </div>
-
-              <div className="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800 space-y-1">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">
                   Core Engineering Focus:
                 </span>
                 <span className="text-xs text-slate-300 leading-relaxed block">
                   {recommendation.focus}
+                </span>
+              </div>
+
+              <div className="p-3.5 rounded-xl bg-cyan-500/5 border border-cyan-500/20 space-y-1">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-cyan-400 block font-semibold">
+                  Direct Engineering Guarantee:
+                </span>
+                <span className="text-xs text-slate-300 block leading-relaxed">
+                  100% IP ownership from day one, zero junior developer handoffs, and direct 1-on-1 technical execution with the founder & lead architect.
                 </span>
               </div>
             </div>

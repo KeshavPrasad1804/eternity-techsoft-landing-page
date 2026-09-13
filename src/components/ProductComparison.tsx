@@ -31,7 +31,7 @@ export default function ProductComparison() {
     },
     {
       feature: 'Self-Hosted / Private Cloud',
-      ksign: 'Full Docker/Kubernetes container support for air-gapped data',
+      ksign: 'Engineered for Docker/Kubernetes private container deployment (Private Alpha)',
       legacy: 'SaaS-only vendor lock-in with mandatory data hosting',
       highlight: true,
     },

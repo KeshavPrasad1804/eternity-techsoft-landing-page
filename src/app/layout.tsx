@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     "cloud architecture",
     "AI automation",
   ],
-  authors: [{ name: "Eternity Techsoft Engineering Team" }],
+  authors: [{ name: "Eternity Techsoft" }],
   alternates: {
     canonical: "/",
   },

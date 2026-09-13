@@ -19,21 +19,21 @@ interface EngagementModelsProps {
 export default function EngagementModels({ onSelectModel }: EngagementModelsProps) {
   const models = [
     {
-      id: 'dedicated-pod',
-      title: 'Dedicated Engineering Pod',
-      tagline: 'Staff Architects, Senior Engineers & QA on Tap',
-      badge: 'Most Popular for Scaling Startups',
+      id: 'sprint-retainer',
+      title: 'Dedicated Sprint Retainer',
+      tagline: 'High-Velocity Full-Stack Execution Embedded in Your Sprints',
+      badge: 'Continuous Delivery',
       badgeColor: 'cyan',
       description:
-        'A dedicated cross-functional engineering unit integrated seamlessly into your sprint workflows. Ramp up or scale down capacity with zero recruiting overhead.',
+        'Direct 1-on-1 technical execution without agency bloat or junior handoffs. I embed directly into your development rhythm to build core features, optimize architectures, and ship production systems.',
       deliverables: [
-        '1 Principal Architect + 2-4 Staff Software Engineers + 1 QA',
-        'Continuous 2-week agile delivery with sprint telemetry',
-        'Direct Slack / Discord / Daily standup access',
+        'Direct 1-on-1 collaboration with founder & lead architect',
+        'End-to-end execution: schemas, APIs, responsive UI, and cloud',
+        'Continuous 2-week agile delivery with working production demos',
         'Full IP ownership with automated CI/CD handovers',
       ],
-      idealFor: 'Series A/B startups and enterprise product teams needing high velocity.',
-      cta: 'Book an Engineering Pod',
+      idealFor: 'Funded startups and product teams needing an elite, autonomous builder.',
+      cta: 'Book Sprint Retainer',
     },
     {
       id: 'fixed-scope',
@@ -100,8 +100,8 @@ export default function EngagementModels({ onSelectModel }: EngagementModelsProp
           </h2>
 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-            Choose the engagement model that fits your operational rhythm—from dedicated agile pods 
-            to fixed-scope rapid sprints and joint venture incubation.
+            Choose the engagement model that fits your operational rhythm—from dedicated sprint retainers 
+            to fixed-scope rapid builds and joint venture incubation.
           </p>
         </div>
 
@@ -131,7 +131,7 @@ export default function EngagementModels({ onSelectModel }: EngagementModelsProp
                     {model.badge}
                   </span>
                   <div className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400">
-                    {model.id === 'dedicated-pod' && <Users className="w-4 h-4 text-cyan-400" />}
+                    {model.id === 'sprint-retainer' && <Layers className="w-4 h-4 text-cyan-400" />}
                     {model.id === 'fixed-scope' && <Rocket className="w-4 h-4 text-emerald-400" />}
                     {model.id === 'co-venture' && <Sparkles className="w-4 h-4 text-violet-400" />}
                   </div>

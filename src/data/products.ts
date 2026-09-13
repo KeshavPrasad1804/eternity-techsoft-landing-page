@@ -66,8 +66,8 @@ export const PRODUCTS: Product[] = [
     metrics: [
       { label: 'Signing Latency', value: '< 2.4s' },
       { label: 'Verification Standard', value: 'SHA-256' },
-      { label: 'Compliance Level', value: 'E-SIGN / UETA' },
-      { label: 'API Uptime Target', value: '99.99%' },
+      { label: 'Legal Architecture', value: 'E-SIGN / UETA Design' },
+      { label: 'Target Uptime SLA', value: '99.99%' },
     ],
     techPills: ['TypeScript', 'Node.js', 'Next.js', 'Web Crypto API', 'PostgreSQL', 'Redis', 'Docker'],
   },

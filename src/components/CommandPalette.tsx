@@ -83,13 +83,6 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
       target: '#developer',
     },
     {
-      id: 'case-studies',
-      title: 'Architectural Case Studies & Production Results',
-      category: 'Client Proof',
-      icon: <Activity className="w-4 h-4 text-emerald-400" />,
-      target: '#case-studies',
-    },
-    {
       id: 'services',
       title: 'Full-Cycle Engineering Services Matrix',
       category: 'Software Services',

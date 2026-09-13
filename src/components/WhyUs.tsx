@@ -19,7 +19,7 @@ export default function WhyUs() {
       icon: <Sparkles className="w-6 h-6 text-cyan-400" />,
       title: 'Proprietary Product DNA',
       description:
-        'We don’t just consult—we build and ship our own flagship platforms (K-Sign & Geomeridian). We treat your product with true founder ownership, high-conviction UX, and scalable architecture rather than just closing hourly tickets.',
+        'I don’t just consult—I architect and actively build proprietary deep-tech platforms (K-Sign, K-Code & Geomeridian). I treat your codebase with true founder ownership, high-conviction UX, and scalable architecture rather than just closing tickets.',
     },
     {
       icon: <Zap className="w-6 h-6 text-amber-400" />,
@@ -31,13 +31,13 @@ export default function WhyUs() {
       icon: <Lock className="w-6 h-6 text-emerald-400" />,
       title: '100% IP Ownership & Mutual NDAs',
       description:
-        'You own every line of code, design file, and cloud credential from day one. We sign mutual enterprise NDAs before reviewing your specs, and provide clean automated CI/CD handovers with complete documentation.',
+        'You own every line of code, design file, and cloud credential from day one. I sign mutual enterprise NDAs before reviewing your specs, and provide clean automated CI/CD handovers with complete documentation.',
     },
     {
       icon: <HeartHandshake className="w-6 h-6 text-violet-400" />,
-      title: 'Direct Access to Principal Engineers',
+      title: '100% Founder-Led Engineering',
       description:
-        'You collaborate directly with principal architects and seasoned staff engineers who own the problem end-to-end. No junior developer handoffs, no layers of account managers, and no game of telephone.',
+        'You work directly 1-on-1 with me—an experienced principal full-stack engineer who architects, codes, and deploys your system end-to-end. Zero junior developer handoffs, zero account managers, and zero agency bloat.',
     },
   ];
 

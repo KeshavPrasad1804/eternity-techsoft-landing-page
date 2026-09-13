@@ -1,12 +1,12 @@
 export const COMPANY_INFO = {
   name: 'Eternity Techsoft',
-  tagline: 'Engineering the Next Paradigm of Software Services & Flagship Products',
+  tagline: 'High-Impact Software Engineering & Proprietary Product Lab',
   shortDescription:
-    'Eternity Techsoft is a software service and product company. We build mission-critical digital systems for forward-thinking enterprises while incubating world-class proprietary platforms like K-Sign, K-Code, and Geomeridian.',
+    'Eternity Techsoft is an independent software engineering studio. I design and build mission-critical digital systems for forward-thinking founders and modern businesses, alongside developing proprietary deep-tech platforms like K-Sign, K-Code, and Geomeridian.',
   email: 'contact@eternitytechsoft.com',
-  careersEmail: 'careers@eternitytechsoft.com',
-  address: 'Global Technology Operations & Digital Labs',
-  statusMessage: 'All Production Services & Product Labs Operational',
+  careersEmail: 'contact@eternitytechsoft.com',
+  address: 'Independent Software Engineering Studio & Digital Labs',
+  statusMessage: 'Engineering Labs Active & Accepting Select Engagements',
   socials: {
     github: 'https://github.com/eternitytechsoft',
     linkedin: 'https://linkedin.com/company/eternitytechsoft',
@@ -17,8 +17,8 @@ export const COMPANY_INFO = {
 export const STATS = [
   {
     value: '99.99%',
-    label: 'Architecture Availability SLA',
-    description: 'High-availability multi-region cloud resilience',
+    label: 'Target Architecture SLA',
+    description: 'Engineered for high-availability multi-region cloud resilience',
   },
   {
     value: '< 85ms',
@@ -26,8 +26,8 @@ export const STATS = [
     description: 'Optimized microservices and edge compute delivery',
   },
   {
-    value: '3 Flagships',
-    label: 'Proprietary Products in Lab',
+    value: '3 Builds',
+    label: 'Proprietary Lab Platforms',
     description: 'K-Sign (Digital Trust), K-Code (AI Harness) & Geomeridian (GIS)',
   },
   {

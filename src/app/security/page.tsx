@@ -90,7 +90,7 @@ export default function SecurityPage() {
               <h2>4. Responsible Vulnerability Disclosure Protocol</h2>
             </div>
             <p>
-              We welcome security researchers and technical audits. If you identify a potential security issue in any Eternity Techsoft web property, SDK, or platform build, please notify our dedicated security response team immediately at:
+              We welcome security researchers and technical audits. If you identify a potential security issue in any Eternity Techsoft web property, SDK, or platform build, please notify security response directly at:
             </p>
             <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 font-mono text-xs text-cyan-300">
               security@eternitytechsoft.com

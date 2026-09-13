@@ -64,8 +64,8 @@ export default function Hero() {
 
             {/* Subhead with explicit mentions */}
             <p className="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl">
-              We partner with founders and enterprise leaders to take ambitious software from idea to production in rapid 2-week sprints. 
-              Built with the same battle-tested engineering behind our own flagship platforms: <span className="text-cyan-300 underline underline-offset-4 decoration-cyan-500/40 font-medium">K-Sign</span> (tamper-proof digital contracts), <span className="text-emerald-300 underline underline-offset-4 decoration-emerald-500/40 font-medium">K-Code</span> (verified coding-agent harness), and <span className="text-violet-300 underline underline-offset-4 decoration-violet-500/40 font-medium">Geomeridian</span> (real-time live maps & fleet tracking).
+              I partner directly with founders and ambitious product leaders to take complex software from concept to production in rapid 2-week sprints. 
+              Direct full-stack execution backed by the same deep-tech engineering behind my proprietary lab platforms: <span className="text-cyan-300 underline underline-offset-4 decoration-cyan-500/40 font-medium">K-Sign</span> (tamper-proof digital contracts), <span className="text-emerald-300 underline underline-offset-4 decoration-emerald-500/40 font-medium">K-Code</span> (verified coding-agent harness), and <span className="text-violet-300 underline underline-offset-4 decoration-violet-500/40 font-medium">Geomeridian</span> (real-time live maps & fleet tracking).
             </p>
 
             {/* Founder Reassurance & Trust Badges */}
@@ -137,12 +137,12 @@ export default function Hero() {
                   <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
                   <span className="ml-2 text-xs font-mono text-slate-400 flex items-center gap-1.5">
                     <Terminal className="w-3.5 h-3.5 text-cyan-400" />
-                    eternity-core-telemetry.sys
+                    eternity-lab-telemetry.sys
                   </span>
                 </div>
-                <div className="flex items-center gap-1.5 text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  LIVE OPERATIONAL
+                <div className="flex items-center gap-1.5 text-[11px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                  ARCHITECTURE TELEMETRY
                 </div>
               </div>
 
